@@ -1,0 +1,13 @@
+brand,code,name,collection,category,size,thickness,finish,price,active
+EDL,DA 2081N,Oak Natural,Woods,Natural Wood,"4'x8' / 1220x2440mm",0.8mm,Matt,285000,true
+EDL,DA 2082T,Teak Brown,Woods,Classic Wood,"4'x8' / 1220x2440mm",0.8mm,Matt,285000,true
+EDL,WY 5216D,White Dove,Solids,Pure Solid,"4'x8' / 1220x2440mm",0.8mm,Gloss,265000,true
+EDL,SL 3301M,Silver Maple,Woods,Modern Wood,"4'x10' / 1220x3050mm",1.0mm,Matt,320000,true
+EDL,GR 4405T,Graphite Stone,Patterns,Stone Pattern,"4'x8' / 1220x2440mm",0.8mm,Matt,295000,true
+LAMITAK,WL 1001,Walnut Classic,Woods,Solid Wood,"4'x8' / 1220x2440mm",0.8mm,Matt,275000,true
+LAMITAK,WL 1002,Cherry Wood,Woods,Solid Wood,"4'x8' / 1220x2440mm",0.8mm,Gloss,275000,true
+LAMITAK,SL 2001,Snow White,Solids,Plain,"4'x8' / 1220x2440mm",0.8mm,Gloss,255000,true
+LAMITAK,SL 2002,Jet Black,Solids,Plain,"4'x8' / 1220x2440mm",0.8mm,Gloss,255000,true
+LAMITAK,PT 3001,Marble Carrara,Patterns,Stone,"4'x8' / 1220x2440mm",0.8mm,Gloss,305000,true
+LAMITAK,PT 3002,Cement Grey,Patterns,Industrial,"4'x8' / 1220x2440mm",0.8mm,Matt,295000,true
+LAMITAK,WL 1003,Bamboo Natural,Woods,Natural,"4'x10' / 1220x3050mm",1.0mm,Matt,310000,true
