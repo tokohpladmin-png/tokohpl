@@ -100,6 +100,7 @@ export default async function HomePage() {
             {[
               { brand: 'EDL HPL', href: '/products?brand=EDL', desc: 'Koleksi lengkap HPL EDL dengan berbagai pilihan motif kayu, polos, dan pola. Kualitas premium untuk interior modern.' },
               { brand: 'Lamitak HPL', href: '/products?brand=LAMITAK', desc: 'Produk HPL Lamitak dengan desain eksklusif dan daya tahan tinggi. Cocok untuk furniture dan panel dinding.' },
+              { brand: 'AICA HPL', href: '/products?brand=AICA', desc: 'HPL AICA hadir sebagai pilihan mid-range berkualitas dengan berbagai motif dan warna. Solusi tepat untuk proyek skala menengah.' },
             ].map((item) => (
               <Link key={item.href} href={item.href}
                 className="bg-white p-8 hover:bg-hpl-50 transition-colors group">

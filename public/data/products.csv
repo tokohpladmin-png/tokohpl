@@ -2,12 +2,18 @@ brand,code,name,collection,category,size,thickness,finish,price,active
 EDL,DA 2081N,Oak Natural,Woods,Natural Wood,"4'x8' / 1220x2440mm",0.8mm,Matt,285000,true
 EDL,DA 2082T,Teak Brown,Woods,Classic Wood,"4'x8' / 1220x2440mm",0.8mm,Matt,285000,true
 EDL,WY 5216D,White Dove,Solids,Pure Solid,"4'x8' / 1220x2440mm",0.8mm,Gloss,265000,true
-EDL,SL 3301M,Silver Maple,Woods,Modern Wood,"4'x10' / 1220x3050mm",1.0mm,Matt,320000,true
-EDL,GR 4405T,Graphite Stone,Patterns,Stone Pattern,"4'x8' / 1220x2440mm",0.8mm,Matt,295000,true
-LAMITAK,WL 1001,Walnut Classic,Woods,Solid Wood,"4'x8' / 1220x2440mm",0.8mm,Matt,275000,true
-LAMITAK,WL 1002,Cherry Wood,Woods,Solid Wood,"4'x8' / 1220x2440mm",0.8mm,Gloss,275000,true
-LAMITAK,SL 2001,Snow White,Solids,Plain,"4'x8' / 1220x2440mm",0.8mm,Gloss,255000,true
-LAMITAK,SL 2002,Jet Black,Solids,Plain,"4'x8' / 1220x2440mm",0.8mm,Gloss,255000,true
-LAMITAK,PT 3001,Marble Carrara,Patterns,Stone,"4'x8' / 1220x2440mm",0.8mm,Gloss,305000,true
-LAMITAK,PT 3002,Cement Grey,Patterns,Industrial,"4'x8' / 1220x2440mm",0.8mm,Matt,295000,true
-LAMITAK,WL 1003,Bamboo Natural,Woods,Natural,"4'x10' / 1220x3050mm",1.0mm,Matt,310000,true
+EDL,WY 5338D,Cream White,Solids,Pure Solid,"4'x8' / 1220x2440mm",0.8mm,Matt,265000,true
+EDL,DXO 4401M,Dark Oak,Woods,Modern Wood,"4'x8' / 1220x2440mm",0.8mm,Matt,295000,true
+EDL,DXO 4402M,Light Oak,Woods,Modern Wood,"4'x8' / 1220x2440mm",0.8mm,Matt,295000,true
+EDL,ATS 7701S,Aluminum Silver,Solids,Metallic,"4'x8' / 1220x2440mm",0.8mm,Gloss,310000,true
+EDL,ARTE 8801P,Marble White,Patterns,Stone,"4'x8' / 1220x2440mm",0.8mm,Gloss,320000,true
+LAMITAK,WY 1001,Walnut Classic,Woods,Solid Wood,"4'x8' / 1220x2440mm",0.8mm,Matt,275000,true
+LAMITAK,WY 1002,Cherry Wood,Woods,Solid Wood,"4'x8' / 1220x2440mm",0.8mm,Gloss,275000,true
+LAMITAK,DXO 2001,Snow White,Solids,Plain,"4'x8' / 1220x2440mm",0.8mm,Gloss,255000,true
+LAMITAK,ATS 3001,Marble Carrara,Patterns,Stone,"4'x8' / 1220x2440mm",0.8mm,Gloss,305000,true
+LAMITAK,ARTE 3002,Cement Grey,Patterns,Industrial,"4'x8' / 1220x2440mm",0.8mm,Matt,295000,true
+AICA,AC 1001,Natural Teak,Woods,Natural,"4'x8' / 1220x2440mm",0.8mm,Matt,235000,true
+AICA,AC 1002,Classic Oak,Woods,Classic,"4'x8' / 1220x2440mm",0.8mm,Matt,235000,true
+AICA,AC 2001,Pure White,Solids,Plain,"4'x8' / 1220x2440mm",0.8mm,Gloss,215000,true
+AICA,AC 2002,Jet Black,Solids,Plain,"4'x8' / 1220x2440mm",0.8mm,Gloss,215000,true
+AICA,AC 3001,Stone Grey,Patterns,Stone,"4'x8' / 1220x2440mm",0.8mm,Matt,245000,true
