@@ -27,10 +27,10 @@ export function CartPageClient() {
   if (items.length === 0) {
     return (
       <div className="shell py-20 text-center">
-        <p className="label mb-4">Keranjang</p>
-        <h1 className="display text-hpl-ink text-4xl mb-4">Keranjang Kosong</h1>
-        <p className="text-[13px] text-hpl-500 mb-8">Belum ada produk yang ditambahkan ke keranjang.</p>
-        <Link href="/products" className="btn-ink">Mulai Belanja</Link>
+        <p className="label mb-4">Keranjang Belanja</p>
+        <h1 className="display text-hpl-ink text-4xl mb-4">Keranjang Masih Kosong</h1>
+        <p className="text-[13px] text-hpl-500 mb-8">Belum ada produk yang ditambahkan ke dalam keranjang belanja Anda.</p>
+        <Link href="/products" className="btn-ink">Buka Katalog Produk</Link>
       </div>
     );
   }
@@ -39,7 +39,7 @@ export function CartPageClient() {
     <div>
       <div className="border-b border-hpl-line bg-hpl-50">
         <div className="shell py-8">
-          <p className="label mb-2">Belanja</p>
+          <p className="label mb-2">Pembelian</p>
           <h1 className="display text-hpl-ink text-4xl sm:text-5xl">Keranjang Belanja</h1>
         </div>
       </div>
@@ -47,18 +47,18 @@ export function CartPageClient() {
       <div className="shell py-10 sm:py-14">
         <div className="grid lg:grid-cols-[1fr_360px] gap-10">
 
-          {/* Left — items */}
+          {/* Kiri — daftar produk */}
           <div>
             <div className="mb-4"><DiscountBadge /></div>
 
             <div className="border border-hpl-line">
               <div className="border-b border-hpl-line px-6 py-4 bg-hpl-50 flex items-center justify-between">
                 <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-hpl-700">
-                  {items.length} Produk · {qty} Lembar
+                  {items.length} Jenis Produk · {qty} Lembar
                 </p>
                 <button onClick={clearCart}
                   className="text-[11px] tracking-[0.12em] uppercase text-hpl-400 hover:text-red-600 transition-colors">
-                  Kosongkan
+                  Kosongkan Keranjang
                 </button>
               </div>
 
@@ -97,16 +97,16 @@ export function CartPageClient() {
 
             <div className="mt-4">
               <Link href="/products" className="text-[11px] font-semibold tracking-[0.16em] uppercase text-hpl-500 hover:text-hpl-ink transition-colors">
-                ← Lanjut Belanja
+                ← Lanjutkan Berbelanja
               </Link>
             </div>
 
             <div className="mt-8"><DiscountTierTable /></div>
           </div>
 
-          {/* Right — summary */}
+          {/* Kanan — ringkasan */}
           <div className="lg:sticky lg:top-24 h-fit space-y-4">
-            {/* Coupon */}
+            {/* Kupon */}
             <div className="border border-hpl-line">
               <div className="border-b border-hpl-line px-5 py-3 bg-hpl-50">
                 <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-hpl-700">Kode Kupon</p>
@@ -114,10 +114,10 @@ export function CartPageClient() {
               <div className="p-4"><CouponInput /></div>
             </div>
 
-            {/* Order summary */}
+            {/* Ringkasan pesanan */}
             <div className="border border-hpl-line">
               <div className="border-b border-hpl-line px-6 py-4 bg-hpl-50">
-                <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-hpl-700">Ringkasan Order</p>
+                <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-hpl-700">Ringkasan Pesanan</p>
               </div>
               <div className="p-6 space-y-3">
                 <div className="flex justify-between text-[13px]">
@@ -145,13 +145,13 @@ export function CartPageClient() {
                 )}
 
                 <div className="flex justify-between text-[13px]">
-                  <span className="text-hpl-600">Ongkir</span>
+                  <span className="text-hpl-600">Ongkos Kirim</span>
                   {province ? (
                     <span className={ship === 0 ? 'font-semibold text-hpl-gold' : 'font-semibold text-hpl-ink'}>
                       {ship === 0 ? 'Gratis' : formatIDR(ship)}
                     </span>
                   ) : (
-                    <span className="text-hpl-400 italic text-[12px]">pilih di checkout</span>
+                    <span className="text-hpl-400 italic text-[12px]">ditentukan saat checkout</span>
                   )}
                 </div>
 
@@ -171,7 +171,7 @@ export function CartPageClient() {
 
                 {!appliedCoupon && next && (
                   <p className="text-[11px] text-hpl-500 bg-hpl-50 border border-hpl-line px-4 py-2">
-                    Tambah <strong className="text-hpl-gold">{next.minQty - qty} lembar lagi</strong> → diskon {Math.round(next.rate * 100)}%
+                    Tambah <strong className="text-hpl-gold">{next.minQty - qty} lembar lagi</strong> untuk mendapatkan diskon {Math.round(next.rate * 100)}%
                   </p>
                 )}
 

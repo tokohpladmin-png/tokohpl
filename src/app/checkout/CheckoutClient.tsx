@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useCartStore } from '@/store/cartStore';
 import { getVolumeTier } from '@/lib/discount';
-import { ALL_PROVINCES, PROVINCE_REGION, SHIPPING_ZONES, getShippingZone } from '@/lib/shipping';
+import { ALL_PROVINCES, PROVINCE_REGION, getShippingZone } from '@/lib/shipping';
 import { formatIDR } from '@/lib/utils';
 import { CouponInput } from '@/components/CouponInput';
 
@@ -31,12 +31,13 @@ function Field({ label, error, children, span2 = false }: {
 export function CheckoutClient() {
   const {
     items, subtotal, totalDiscount, grandTotal, shippingFee, orderTotal,
-    totalQty, appliedCoupon, province, setProvince, clearCart,
+    totalQty, appliedCoupon, province, city, setProvince, setCity, clearCart,
+    shippingWeight,
   } = useCartStore();
 
   const [form, setForm] = useState<FormData>({
     fullName: '', phone: '', email: '',
-    province: province || '', city: '', address: '', postalCode: '', notes: '',
+    province: province || '', city: city || '', address: '', postalCode: '', notes: '',
   });
   const [errors, setErrors]     = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
@@ -51,6 +52,7 @@ export function CheckoutClient() {
   const tier  = getVolumeTier(qty);
 
   const currentZone = form.province ? getShippingZone(form.province) : null;
+  const weightInfo  = shippingWeight();
 
   const handleProvinceChange = (val: string) => {
     setForm((f) => ({ ...f, province: val }));
@@ -58,9 +60,16 @@ export function CheckoutClient() {
     setErrors((e) => ({ ...e, province: undefined }));
   };
 
+  const handleCityChange = (val: string) => {
+    setForm((f) => ({ ...f, city: val }));
+    setCity(val);
+    setErrors((e) => ({ ...e, city: undefined }));
+  };
+
   const set = (key: keyof FormData) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
       if (key === 'province') { handleProvinceChange(e.target.value); return; }
+      if (key === 'city') { handleCityChange(e.target.value); return; }
       setForm((f) => ({ ...f, [key]: e.target.value }));
       setErrors((er) => ({ ...er, [key]: undefined }));
     };
@@ -84,6 +93,7 @@ export function CheckoutClient() {
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
 
     const id = `ORD-${Date.now()}`;
+    const wInfo = weightInfo;
     const orderData = {
       orderId: id,
       timestamp: new Date().toISOString(),
@@ -91,6 +101,7 @@ export function CheckoutClient() {
       items: items.map((i) => ({
         code: i.product.code, name: i.product.name, brand: i.product.brand,
         quantity: i.quantity, unitPrice: i.product.price,
+        weightKgPerSheet: i.product.weight ?? 3.5,
         lineTotal: typeof i.product.price === 'number' ? i.product.price * i.quantity : null,
       })),
       totalQty: qty,
@@ -102,6 +113,9 @@ export function CheckoutClient() {
       shippingFee: ship,
       orderTotal: order,
       shippingRegion: form.province ? PROVINCE_REGION[form.province] : null,
+      chargeableWeightKg: wInfo.totalWeightKg,
+      cratingRequired: wInfo.crating.required,
+      cratesNeeded: wInfo.crating.cratesNeeded,
     };
 
     try { localStorage.setItem(`order_${id}`, JSON.stringify(orderData)); } catch {}
@@ -203,7 +217,12 @@ export function CheckoutClient() {
                   </div>
                 </Field>
                 <Field label="Kota / Kabupaten *" error={errors.city}>
-                  <input value={form.city} onChange={set('city')} placeholder="Nama kota" className={`field ${errors.city ? 'border-red-400' : ''}`}/>
+                  <input
+                    value={form.city}
+                    onChange={set('city')}
+                    placeholder="Nama kota"
+                    className={`field ${errors.city ? 'border-red-400' : ''}`}
+                  />
                 </Field>
                 <Field label="Alamat Lengkap *" error={errors.address} span2>
                   <textarea value={form.address} onChange={set('address')} rows={3}
@@ -220,28 +239,71 @@ export function CheckoutClient() {
 
               {/* Shipping info banner */}
               {currentZone && (
-                <div className="mx-6 mb-6 border border-hpl-line bg-hpl-50 px-5 py-4">
-                  <div className="flex items-start justify-between gap-4 flex-wrap">
-                    <div>
-                      <p className="text-[10px] font-semibold tracking-[0.16em] uppercase text-hpl-500 mb-1">
-                        Estimasi Pengiriman ke {currentZone.label}
-                      </p>
-                      <p className="text-[13px] font-semibold text-hpl-ink">{currentZone.estimasi}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-[10px] font-semibold tracking-[0.16em] uppercase text-hpl-500 mb-1">Ongkir</p>
-                      {ship === 0 ? (
-                        <p className="text-[13px] font-semibold text-hpl-gold">Gratis 🎉</p>
-                      ) : (
-                        <div>
-                          <p className="text-[13px] font-semibold text-hpl-ink">{formatIDR(ship)}</p>
-                          <p className="text-[10px] text-hpl-500">
-                            Gratis jika total ≥ {formatIDR(currentZone.freeThreshold)}
-                          </p>
-                        </div>
-                      )}
+                <div className="mx-6 mb-6 space-y-3">
+                  {/* Zone + ongkir */}
+                  <div className="border border-hpl-line bg-hpl-50 px-5 py-4">
+                    <div className="flex items-start justify-between gap-4 flex-wrap">
+                      <div>
+                        <p className="text-[10px] font-semibold tracking-[0.16em] uppercase text-hpl-500 mb-1">
+                          Estimasi Pengiriman ke {currentZone.label}
+                        </p>
+                        <p className="text-[13px] font-semibold text-hpl-ink">{currentZone.estimasi}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-[10px] font-semibold tracking-[0.16em] uppercase text-hpl-500 mb-1">Ongkir</p>
+                        {ship === 0 ? (
+                          <p className="text-[13px] font-semibold text-hpl-gold">Gratis 🎉</p>
+                        ) : (
+                          <div>
+                            <p className="text-[13px] font-semibold text-hpl-ink">{formatIDR(ship)}</p>
+                            <p className="text-[10px] text-hpl-500">
+                              Gratis jika total ≥ {formatIDR(currentZone.freeThreshold)}
+                            </p>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
+
+                  {/* Weight & crating info — shown once city is typed */}
+                  {form.city.trim().length >= 2 && (
+                    <div className="border border-hpl-line bg-hpl-50 px-5 py-4">
+                      <div className="flex items-start justify-between gap-4 flex-wrap">
+                        <div>
+                          <p className="text-[10px] font-semibold tracking-[0.16em] uppercase text-hpl-500 mb-1">
+                            Berat Pengiriman
+                          </p>
+                          <p className="text-[13px] font-semibold text-hpl-ink">
+                            {weightInfo.totalWeightKg.toFixed(1)} kg
+                          </p>
+                          <p className="text-[11px] text-hpl-400 mt-0.5">
+                            Produk {weightInfo.baseWeightKg.toFixed(1)} kg
+                            {weightInfo.crating.required && (
+                              <> + peti kayu {weightInfo.cratingWeightKg} kg</>
+                            )}
+                          </p>
+                        </div>
+                        {weightInfo.crating.required && (
+                          <div className="text-right">
+                            <p className="text-[10px] font-semibold tracking-[0.16em] uppercase text-hpl-500 mb-1">
+                              Peti Kayu
+                            </p>
+                            <p className="text-[13px] font-semibold text-hpl-ink">
+                              {weightInfo.crating.cratesNeeded} peti
+                            </p>
+                            <p className="text-[10px] text-hpl-500">
+                              Maks. 20 lembar/peti
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                      {weightInfo.crating.required && (
+                        <p className="text-[10px] text-hpl-500 mt-2 pt-2 border-t border-hpl-line">
+                          Pengiriman ke luar Jabodetabek memerlukan peti kayu pelindung. Biaya peti sudah termasuk dalam ongkir.
+                        </p>
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
             </fieldset>
@@ -304,6 +366,14 @@ export function CheckoutClient() {
                     <span className="text-hpl-400 italic text-[12px]">pilih provinsi</span>
                   )}
                 </div>
+
+                {/* Crating note in summary */}
+                {weightInfo.crating.required && form.city.trim().length >= 2 && (
+                  <div className="flex justify-between text-[11px] text-hpl-500">
+                    <span>Peti kayu ({weightInfo.crating.cratesNeeded}×)</span>
+                    <span>termasuk ongkir</span>
+                  </div>
+                )}
 
                 <div className="border-t border-hpl-line pt-3 flex justify-between">
                   <span className="text-[13px] font-semibold text-hpl-ink">Total</span>

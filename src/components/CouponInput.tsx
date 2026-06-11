@@ -4,15 +4,14 @@ import { useCartStore } from '@/store/cartStore';
 
 export function CouponInput() {
   const { appliedCoupon, applyCoupon, removeCoupon } = useCartStore();
-  const [input, setInput]   = useState('');
-  const [error, setError]   = useState('');
+  const [input, setInput]     = useState('');
+  const [error, setError]     = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleApply = () => {
-    if (!input.trim()) { setError('Masukkan kode kupon'); return; }
+    if (!input.trim()) { setError('Masukkan kode kupon terlebih dahulu'); return; }
     setLoading(true);
     setError('');
-    // Small timeout for UX feel
     setTimeout(() => {
       const result = applyCoupon(input.trim());
       if (!result.valid) setError(result.error);
@@ -51,7 +50,7 @@ export function CouponInput() {
           value={input}
           onChange={(e) => { setInput(e.target.value.toUpperCase()); setError(''); }}
           onKeyDown={(e) => e.key === 'Enter' && handleApply()}
-          placeholder="Kode kupon"
+          placeholder="Masukkan kode kupon"
           className="field flex-1 text-[13px] tracking-[0.06em] uppercase"
           style={{ borderRight: 'none' }}
         />
@@ -61,7 +60,7 @@ export function CouponInput() {
           disabled={loading}
           className="btn-ink text-[10px] px-5 shrink-0 disabled:opacity-60"
         >
-          {loading ? '...' : 'Pakai'}
+          {loading ? '...' : 'Terapkan'}
         </button>
       </div>
       {error && (

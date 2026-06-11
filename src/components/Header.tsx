@@ -81,7 +81,7 @@ export function Header() {
       {/* Announcement */}
       <div className="bg-hpl-ink text-white text-center py-2 px-4">
         <p className="text-[10px] tracking-[0.22em] uppercase font-medium text-hpl-200">
-          Gratis Ongkir ke Jawa & Bali · EDL HPL & Lamitak HPL
+          Bebas Ongkir ke Jawa & Bali · Distributor Resmi EDL HPL & Lamitak HPL
         </p>
       </div>
 
@@ -106,7 +106,7 @@ export function Header() {
               <Link href="/" className="hover:text-hpl-ink transition-colors">Beranda</Link>
               <div className="group relative py-6">
                 <button className="flex items-center gap-1 hover:text-hpl-ink transition-colors cursor-pointer">
-                  Produk
+                  Katalog
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="translate-y-px">
                     <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -125,13 +125,13 @@ export function Header() {
                     <div className="rule mx-4 my-1"/>
                     <Link href="/products"
                       className="block px-5 py-3 text-[11px] font-semibold tracking-[0.1em] uppercase text-hpl-ink hover:bg-hpl-50 transition-colors">
-                      Semua Produk →
+                      Seluruh Produk →
                     </Link>
                   </div>
                 </div>
               </div>
               <Link href="/about" className="hover:text-hpl-ink transition-colors">Tentang Kami</Link>
-              <Link href="/shipping" className="hover:text-hpl-ink transition-colors">Pengiriman</Link>
+              <Link href="/shipping" className="hover:text-hpl-ink transition-colors">Info Pengiriman</Link>
               <Link href="/contact" className="hover:text-hpl-ink transition-colors">Kontak</Link>
             </nav>
 
@@ -148,7 +148,7 @@ export function Header() {
                 WhatsApp
               </a>
               {/* Mobile hamburger */}
-              <button type="button" aria-label="Toggle menu" aria-expanded={isOpen}
+              <button type="button" aria-label="Buka menu" aria-expanded={isOpen}
                 onClick={() => setIsOpen((v) => !v)}
                 className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] shrink-0">
                 <span className={`block h-[1.5px] w-6 bg-hpl-ink transition-all duration-200 ${isOpen ? 'translate-y-[6.5px] rotate-45' : ''}`}/>
@@ -171,11 +171,11 @@ export function Header() {
             <nav className="shell py-4">
               {[
                 { href: '/', label: 'Beranda' },
-                { href: '/products', label: 'Semua Produk' },
+                { href: '/products', label: 'Seluruh Produk' },
                 { href: '/products?brand=EDL', label: 'EDL HPL' },
                 { href: '/products?brand=LAMITAK', label: 'Lamitak HPL' },
                 { href: '/about', label: 'Tentang Kami' },
-                { href: '/shipping', label: 'Pengiriman' },
+                { href: '/shipping', label: 'Info Pengiriman' },
                 { href: '/contact', label: 'Kontak' },
               ].map((item) => (
                 <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}
@@ -187,7 +187,7 @@ export function Header() {
             <div className="shell pb-5 pt-2">
               <a href="https://wa.me/6281288885224" target="_blank" rel="noreferrer"
                 className="btn-ink w-full justify-center">
-                WhatsApp Kami
+                Hubungi via WhatsApp
               </a>
             </div>
           </div>

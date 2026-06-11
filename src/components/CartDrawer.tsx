@@ -39,11 +39,11 @@ export function CartDrawer() {
           <div>
             <p className="label mb-0.5" style={{ color: '#a8763e' }}>tokohpl.com</p>
             <h2 className="display text-white text-2xl">
-              Keranjang
+              Keranjang Belanja
               {qty > 0 && <span className="text-[14px] font-normal text-hpl-400 ml-2">({qty} lembar)</span>}
             </h2>
           </div>
-          <button type="button" onClick={closeDrawer} aria-label="Tutup"
+          <button type="button" onClick={closeDrawer} aria-label="Tutup keranjang"
             className="w-10 h-10 flex items-center justify-center border border-white/20 text-white hover:border-white/60 transition-colors">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M1 1L11 11M11 1L1 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -51,10 +51,10 @@ export function CartDrawer() {
           </button>
         </div>
 
-        {/* Nudge bar */}
+        {/* Volume nudge */}
         {qty > 0 && !appliedCoupon && next && (
           <div className="bg-hpl-50 border-b border-hpl-line px-6 py-2.5 text-[11px] text-hpl-500">
-            💡 Beli <strong className="text-hpl-gold">{next.minQty - qty} lembar lagi</strong> → diskon volume {Math.round(next.rate * 100)}%
+            Tambah <strong className="text-hpl-gold">{next.minQty - qty} lembar lagi</strong> untuk mendapatkan diskon volume {Math.round(next.rate * 100)}%
           </div>
         )}
         {qty > 0 && (tier.rate > 0 || appliedCoupon) && (
@@ -65,7 +65,7 @@ export function CartDrawer() {
               {appliedCoupon && `Kupon ${appliedCoupon.code}`}
               {' '}aktif
             </span>
-            <span>Hemat {formatIDR(disc)}</span>
+            <span>Penghematan {formatIDR(disc)}</span>
           </div>
         )}
 
@@ -78,9 +78,9 @@ export function CartDrawer() {
                 <circle cx="20" cy="38" r="2" fill="currentColor"/>
                 <circle cx="32" cy="38" r="2" fill="currentColor"/>
               </svg>
-              <p className="text-[13px] font-medium text-hpl-ink mb-1">Keranjang kosong</p>
-              <p className="text-[12px] text-hpl-500 mb-6">Tambahkan produk untuk memulai</p>
-              <button onClick={closeDrawer} className="btn-ghost text-[10px] py-2.5 px-5">Lihat Produk</button>
+              <p className="text-[13px] font-medium text-hpl-ink mb-1">Keranjang masih kosong</p>
+              <p className="text-[12px] text-hpl-500 mb-6">Tambahkan produk dari katalog untuk memulai pemesanan.</p>
+              <button onClick={closeDrawer} className="btn-ghost text-[10px] py-2.5 px-5">Buka Katalog</button>
             </div>
           ) : (
             <ul className="divide-y divide-hpl-line">
@@ -93,6 +93,7 @@ export function CartDrawer() {
                     <div className="flex items-start justify-between gap-2 mb-0.5">
                       <p className="text-[10px] tracking-[0.16em] uppercase text-hpl-500">{item.product.brand} · {item.product.code}</p>
                       <button type="button" onClick={() => removeItem(item.product.code)}
+                        aria-label="Hapus produk"
                         className="text-hpl-300 hover:text-red-500 transition-colors shrink-0">
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                           <path d="M1 1L9 9M9 1L1 9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
@@ -116,10 +117,8 @@ export function CartDrawer() {
         {/* Footer */}
         {items.length > 0 && (
           <div className="border-t border-hpl-line px-6 py-5 space-y-3 bg-white">
-            {/* Coupon */}
             <CouponInput />
 
-            {/* Totals */}
             <div className="space-y-2 pt-1">
               <div className="flex justify-between text-[12px]">
                 <span className="text-hpl-600">Subtotal</span>
@@ -133,15 +132,15 @@ export function CartDrawer() {
               )}
               {province ? (
                 <div className="flex justify-between text-[12px]">
-                  <span className="text-hpl-600">Ongkir</span>
+                  <span className="text-hpl-600">Ongkos Kirim</span>
                   <span className={ship === 0 ? 'text-hpl-gold font-semibold' : 'text-hpl-ink'}>
                     {ship === 0 ? 'Gratis' : formatIDR(ship)}
                   </span>
                 </div>
               ) : (
                 <div className="flex justify-between text-[12px]">
-                  <span className="text-hpl-600">Ongkir</span>
-                  <span className="text-hpl-400 italic">pilih provinsi</span>
+                  <span className="text-hpl-600">Ongkos Kirim</span>
+                  <span className="text-hpl-400 italic">pilih provinsi tujuan</span>
                 </div>
               )}
               <div className="flex justify-between pt-2 border-t border-hpl-line">
@@ -155,7 +154,7 @@ export function CartDrawer() {
                 Lihat Keranjang
               </Link>
               <Link href="/checkout" onClick={closeDrawer} className="btn-ink text-[10px] py-3 justify-center">
-                Checkout
+                Lanjut Checkout
               </Link>
             </div>
           </div>

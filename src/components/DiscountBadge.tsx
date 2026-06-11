@@ -4,11 +4,11 @@ import { getVolumeTier, getNextVolumeTier, VOLUME_TIERS } from '@/lib/discount';
 import { formatIDR } from '@/lib/utils';
 
 export function DiscountBadge() {
-  const totalQty   = useCartStore((s) => s.totalQty());
-  const totalDisc  = useCartStore((s) => s.totalDiscount());
-  const coupon     = useCartStore((s) => s.appliedCoupon);
-  const tier       = getVolumeTier(totalQty);
-  const next       = getNextVolumeTier(totalQty);
+  const totalQty  = useCartStore((s) => s.totalQty());
+  const totalDisc = useCartStore((s) => s.totalDiscount());
+  const coupon    = useCartStore((s) => s.appliedCoupon);
+  const tier      = getVolumeTier(totalQty);
+  const next      = getNextVolumeTier(totalQty);
 
   if (totalQty === 0) return null;
 
@@ -21,7 +21,7 @@ export function DiscountBadge() {
           <div className="flex items-center gap-2 flex-wrap">
             {tier.rate > 0 && (
               <span className="bg-hpl-gold text-white text-[9px] font-bold tracking-[0.14em] uppercase px-2 py-0.5">
-                VOL {Math.round(tier.rate * 100)}%
+                VOLUME {Math.round(tier.rate * 100)}%
               </span>
             )}
             {coupon && (
@@ -30,19 +30,19 @@ export function DiscountBadge() {
               </span>
             )}
             <span className="text-[12px] text-hpl-600">
-              Hemat {formatIDR(totalDisc)}
+              Penghematan {formatIDR(totalDisc)}
             </span>
           </div>
           {!coupon && next && (
             <span className="text-[11px] text-hpl-500">
-              +{next.minQty - totalQty} lembar → {Math.round(next.rate * 100)}% off
+              Tambah {next.minQty - totalQty} lembar → diskon {Math.round(next.rate * 100)}%
             </span>
           )}
         </div>
       ) : (
         !coupon && next && (
           <p className="text-[11px] text-hpl-500 m-0">
-            💡 Beli <strong className="text-hpl-gold">{next.minQty - totalQty} lembar lagi</strong> untuk diskon {Math.round(next.rate * 100)}%
+            Tambah <strong className="text-hpl-gold">{next.minQty - totalQty} lembar lagi</strong> untuk mendapatkan diskon volume {Math.round(next.rate * 100)}%
           </p>
         )
       )}
@@ -51,14 +51,14 @@ export function DiscountBadge() {
 }
 
 export function DiscountTierTable() {
-  const totalQty   = useCartStore((s) => s.totalQty());
+  const totalQty    = useCartStore((s) => s.totalQty());
   const currentTier = getVolumeTier(totalQty);
 
   return (
     <div className="border border-hpl-line">
       <div className="border-b border-hpl-line px-4 py-3 bg-hpl-50">
         <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-hpl-ink">
-          Diskon Volume
+          Program Diskon Volume
         </p>
       </div>
       {VOLUME_TIERS.map((tier) => {
@@ -76,7 +76,7 @@ export function DiscountTierTable() {
             </span>
             <div className="flex items-center gap-2">
               <span className={`text-[12px] font-bold ${tier.rate === 0 ? 'text-hpl-400' : 'text-hpl-gold'}`}>
-                {tier.rate === 0 ? 'Tidak ada diskon' : `${Math.round(tier.rate * 100)}% off`}
+                {tier.rate === 0 ? 'Tanpa diskon' : `Diskon ${Math.round(tier.rate * 100)}%`}
               </span>
               {isActive && (
                 <span className="text-[8px] font-bold tracking-[0.16em] uppercase bg-hpl-gold text-white px-2 py-0.5">
