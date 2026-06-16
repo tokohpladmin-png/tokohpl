@@ -69,7 +69,7 @@ export function CartPageClient() {
                     <li key={key} className="flex gap-5 p-6">
                       <div className="relative w-24 h-24 sm:w-28 sm:h-28 shrink-0 border border-hpl-line overflow-hidden bg-hpl-50">
                         <ProductImage
-                          src={item.product.imageUrl || ''} imageUrls={item.product.imageUrlCandidates}
+                          src={item.product.imageUrl || ''}
                           alt={item.product.name}
                         />
                       </div>
