@@ -26,7 +26,7 @@ export default async function HomePage() {
               Terbaik
             </h1>
             <p className="text-[14px] leading-7 text-white/65 max-w-md mb-8">
-              Temukan ribuan pilihan HPL berkualitas dari EDL dan Lamitak. Gratis ongkir ke seluruh Jawa & Bali.
+              Temukan ribuan pilihan HPL berkualitas dari EDL dan Lamitak. Pengiriman ke seluruh Indonesia dengan tarif kompetitif.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/products" className="btn-ghost-white">
@@ -103,6 +103,12 @@ export default async function HomePage() {
               className="bg-white p-8 sm:p-10 hover:bg-hpl-50 transition-colors group">
               {/* EDL logo mark */}
               <div className="flex items-center gap-3 mb-6">
+                <div className="w-14 h-10 bg-hpl-ink flex items-center justify-center">
+                  <span className="text-white text-[11px] font-black tracking-[0.2em]">EDL</span>
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-hpl-500">Singapore</p>
+                  <p className="text-[10px] text-hpl-400">High Pressure Laminate</p>
                 </div>
               </div>
               <p className="text-[18px] font-semibold text-hpl-ink mb-3 group-hover:text-hpl-accent transition-colors">EDL HPL</p>
@@ -122,6 +128,12 @@ export default async function HomePage() {
               className="bg-white p-8 sm:p-10 hover:bg-hpl-50 transition-colors group">
               {/* Lamitak logo mark */}
               <div className="flex items-center gap-3 mb-6">
+                <div className="w-14 h-10 bg-[#1a3a5c] flex items-center justify-center">
+                  <span className="text-white text-[8px] font-black tracking-[0.15em]">LAMITAK</span>
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-hpl-500">Singapore</p>
+                  <p className="text-[10px] text-hpl-400">Inspiring Spaces</p>
                 </div>
               </div>
               <p className="text-[18px] font-semibold text-hpl-ink mb-3 group-hover:text-hpl-accent transition-colors">Lamitak HPL</p>
@@ -221,7 +233,7 @@ export default async function HomePage() {
               <em className="text-hpl-300 not-italic">Siap Dikirim</em>
             </h2>
             <p className="text-[14px] leading-7 text-hpl-400 max-w-md mx-auto mb-8">
-              Temukan HPL yang sesuai kebutuhan Anda. Gratis ongkir ke Jawa & Bali.
+              Temukan HPL yang sesuai kebutuhan Anda. Pengiriman ke seluruh Indonesia.
             </p>
             <Link href="/products" className="btn-ghost-white">
               Mulai Belanja Sekarang
