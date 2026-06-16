@@ -26,7 +26,7 @@ export default async function HomePage() {
               Terbaik
             </h1>
             <p className="text-[14px] leading-7 text-white/65 max-w-md mb-8">
-              Temukan ribuan pilihan HPL berkualitas dari EDL dan Lamitak. Gratis ongkir ke seluruh Jawa & Bali.
+              Temukan ribuan pilihan HPL berkualitas dari EDL dan Lamitak. Pengiriman ke seluruh Indonesia dengan tarif kompetitif.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/products" className="btn-ghost-white">
@@ -198,7 +198,7 @@ export default async function HomePage() {
               <em className="text-hpl-300 not-italic">Siap Dikirim</em>
             </h2>
             <p className="text-[14px] leading-7 text-hpl-400 max-w-md mx-auto mb-8">
-              Temukan HPL yang sesuai kebutuhan Anda. Gratis ongkir ke Jawa & Bali.
+              Temukan HPL yang sesuai kebutuhan Anda. Pengiriman ke seluruh Indonesia.
             </p>
             <Link href="/products" className="btn-ghost-white">
               Mulai Belanja Sekarang
