@@ -14,7 +14,7 @@ type Props = {
     collections: string[];
     categories: string[];
     sizes: string[];
-  
+    finishes: string[];
   };
 };
 
@@ -44,13 +44,14 @@ export function ProductExplorer({ products, filterOptions }: Props) {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(searchParams.get('search') || '');
   const [brand, setBrand] = useState(searchParams.get('brand') || '');
-  const [collection, setCollection] = useState('');
+  const [collection, setCollection] = useState(searchParams.get('collection') || '');
   const [size, setSize] = useState('');
   const [page, setPage] = useState(1);
 
   useEffect(() => {
     setQuery(searchParams.get('search') || '');
     setBrand(searchParams.get('brand') || '');
+    setCollection(searchParams.get('collection') || '');
     setPage(1);
   }, [searchParams]);
 
@@ -123,11 +124,7 @@ export function ProductExplorer({ products, filterOptions }: Props) {
                 className="field w-full"
               />
             </label>
-            <Select label="Merek" value={brand} onChange={setBrand}
-              options={filterOptions.brands} placeholder="Semua Merek"/>
-            <Select label="Koleksi" value={collection} onChange={setCollection}
-              options={filterOptions.collections} placeholder="Semua Koleksi"/>
-            <Select label="Ukuran" value={size} onChange={setSize}
+<Select label="Ukuran" value={size} onChange={setSize}
               options={filterOptions.sizes} placeholder="Semua Ukuran"/>
           </div>
           <div className="mt-4 flex items-center justify-between gap-3 text-sm text-hpl-500">

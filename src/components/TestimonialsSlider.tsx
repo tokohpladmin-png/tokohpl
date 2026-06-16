@@ -63,7 +63,7 @@ export function TestimonialsSlider() {
           <div>
             <p className="label mb-3">Testimoni Pelanggan</p>
             <h2 className="text-[clamp(28px,4vw,44px)] font-light tracking-[-0.03em]">
-              Dipercaya Para Profesional
+              Pilihan Para Profesional
             </h2>
           </div>
           {/* Nav arrows */}
