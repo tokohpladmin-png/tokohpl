@@ -1,4 +1,4 @@
-import { LAMITAK_NUM_FMT, EDL_DESIGN_MAP, EDL_CODE_MAP } from './cloudinaryMap';
+import { LAMITAK_NUM_FMT, EDL_DESIGN_MAP, EDL_CODE_MAP, EDL_ADD_NUM_MAP } from './cloudinaryMap';
 
 const USE_PROXY = true;
 const BASE      = 'https://res.cloudinary.com/varindo/image/upload';
@@ -23,14 +23,22 @@ function lamitakUrl(code: string): string {
 // 1. By design name (CSV "Code" column, e.g. "TITAN I") → p063-titan-i images
 // 2. By product code prefix (e.g. "DH 1596QT") → non-p063 images
 function edlUrl(productCode: string, designName: string): string {
-  // Try product code first (non-p063 images like DH 1596QT, DWT 3776W etc.)
+  // 1. Try product code (non-p063 images)
   const byCode = EDL_CODE_MAP[productCode.toUpperCase()];
   if (byCode) return proxy(byCode);
 
-  // Try design name (p063-* images cover most EDL products)
+  // 2. Try design name (p063-* images)
   if (designName) {
     const byDesign = EDL_DESIGN_MAP[designName.toUpperCase()];
     if (byDesign) return proxy(byDesign);
+  }
+
+  // 3. Try edl_add folder by numeric ID from product code
+  const m = productCode.match(/\d+/);
+  if (m) {
+    const num = m[0].replace(/^0+/, '') || '0';
+    const byNum = EDL_ADD_NUM_MAP[num];
+    if (byNum) return proxy(byNum);
   }
 
   return '';

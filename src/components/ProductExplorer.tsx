@@ -46,6 +46,7 @@ export function ProductExplorer({ products, filterOptions }: Props) {
   const [collection, setCollection] = useState(searchParams.get('collection') || '');
   const [size, setSize] = useState('');
   const [maxPrice, setMaxPrice] = useState(0); // 0 = no limit
+  const [sortBy, setSortBy] = useState('default');
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -65,16 +66,21 @@ export function ProductExplorer({ products, filterOptions }: Props) {
     if (collection) result = result.filter((p) => p.collection === collection);
     if (size) result = result.filter((p) => p.size === size);
     if (maxPrice > 0) result = result.filter((p) => typeof p.price === 'number' && p.price <= maxPrice);
+    // Sort
+    if (sortBy === 'price-asc') result = [...result].sort((a, b) => (a.price ?? 0) - (b.price ?? 0));
+    else if (sortBy === 'price-desc') result = [...result].sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
+    else if (sortBy === 'name-asc') result = [...result].sort((a, b) => a.name.localeCompare(b.name, 'id'));
+    else if (sortBy === 'new') result = [...result].sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
     return result;
-  }, [products, query, brand, collection, size, maxPrice, searchParams]);
+  }, [products, query, brand, collection, size, maxPrice, sortBy, searchParams]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const safePage = Math.min(page, totalPages);
   const start = (safePage - 1) * PER_PAGE;
   const paginated = filtered.slice(start, start + PER_PAGE);
-  const hasFilters = Boolean(query || brand || collection || size || maxPrice > 0);
+  const hasFilters = Boolean(query || brand || collection || size || maxPrice > 0 || sortBy !== 'default');
 
-  const clearAll = () => { setQuery(''); setBrand(''); setCollection(''); setSize(''); setMaxPrice(0); setPage(1); };
+  const clearAll = () => { setQuery(''); setBrand(''); setCollection(''); setSize(''); setMaxPrice(0); setSortBy('default'); setPage(1); };
 
   return (
     <div>
