@@ -107,6 +107,7 @@ export function parseProductsFromCsv(csvText: string): Product[] {
       slug,
       code,
       name: designLabel || code,
+      itemName,
       brand,
       collection: collection || undefined,
       subCollection: subColl || undefined,
