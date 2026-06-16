@@ -103,12 +103,6 @@ export default async function HomePage() {
               className="bg-white p-8 sm:p-10 hover:bg-hpl-50 transition-colors group">
               {/* EDL logo mark */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-10 bg-hpl-ink flex items-center justify-center">
-                  <span className="text-white text-[11px] font-black tracking-[0.2em]">EDL</span>
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-hpl-500">Singapore</p>
-                  <p className="text-[10px] text-hpl-400">High Pressure Laminate</p>
                 </div>
               </div>
               <p className="text-[18px] font-semibold text-hpl-ink mb-3 group-hover:text-hpl-accent transition-colors">EDL HPL</p>
@@ -128,12 +122,6 @@ export default async function HomePage() {
               className="bg-white p-8 sm:p-10 hover:bg-hpl-50 transition-colors group">
               {/* Lamitak logo mark */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-10 bg-[#1a3a5c] flex items-center justify-center">
-                  <span className="text-white text-[8px] font-black tracking-[0.15em]">LAMITAK</span>
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-hpl-500">Singapore</p>
-                  <p className="text-[10px] text-hpl-400">Inspiring Spaces</p>
                 </div>
               </div>
               <p className="text-[18px] font-semibold text-hpl-ink mb-3 group-hover:text-hpl-accent transition-colors">Lamitak HPL</p>
