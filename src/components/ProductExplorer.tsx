@@ -14,7 +14,7 @@ type Props = {
     collections: string[];
     categories: string[];
     sizes: string[];
-    finishes: string[];
+  
   };
 };
 
