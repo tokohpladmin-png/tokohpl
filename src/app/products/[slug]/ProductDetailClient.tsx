@@ -14,9 +14,9 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
   const specs = [
     ['Kode Produk', product.code],
-    ['Brand', product.brand],
+    ['Desain', product.name],
+    ['Merek', product.brand],
     ['Koleksi', product.collection],
-    ['Kategori', product.category],
     ['Ukuran', product.size],
     ['Ketebalan', product.thickness],
   ].filter(([, v]) => Boolean(v));
@@ -55,8 +55,10 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
           {/* Detail */}
           <div>
-            <p className="label text-hpl-gold mb-3">{product.brand}</p>
-            <h1 className="display text-hpl-ink text-4xl sm:text-5xl mb-6">{product.name}</h1>
+            <p className="label text-hpl-500 mb-2 text-[10px] tracking-[0.16em]">
+              {product.code} · {product.brand} HPL · {product.size}
+            </p>
+            <h1 className="display text-hpl-ink text-3xl sm:text-4xl mb-6">{product.name}</h1>
 
             <div className="border-t border-b border-hpl-line py-5 mb-7">
               <span className="font-display text-3xl font-light text-hpl-ink">{formatIDR(product.price)}</span>
