@@ -42,7 +42,6 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <div className="aspect-square border border-hpl-line overflow-hidden bg-hpl-50">
               <ProductImage
                 src={product.imageUrl || ''}
-                imageUrls={product.imageUrlCandidates || []}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />

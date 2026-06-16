@@ -14,7 +14,6 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="relative aspect-square overflow-hidden bg-hpl-100">
           <ProductImage
             src={product.imageUrl || ''}
-            imageUrls={product.imageUrlCandidates || []}
             alt={product.name}
           />
           <div className="absolute inset-0 bg-hpl-ink/0 transition-colors duration-200 group-hover:bg-hpl-ink/[0.03]" />
