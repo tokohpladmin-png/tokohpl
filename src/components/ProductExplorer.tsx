@@ -14,7 +14,6 @@ type Props = {
     collections: string[];
     categories: string[];
     sizes: string[];
-    finishes: string[];
   };
 };
 
@@ -46,6 +45,7 @@ export function ProductExplorer({ products, filterOptions }: Props) {
   const [brand, setBrand] = useState(searchParams.get('brand') || '');
   const [collection, setCollection] = useState(searchParams.get('collection') || '');
   const [size, setSize] = useState('');
+  const [maxPrice, setMaxPrice] = useState(0); // 0 = no limit
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -64,16 +64,17 @@ export function ProductExplorer({ products, filterOptions }: Props) {
     if (brand) result = result.filter((p) => p.brand === brand.toUpperCase());
     if (collection) result = result.filter((p) => p.collection === collection);
     if (size) result = result.filter((p) => p.size === size);
+    if (maxPrice > 0) result = result.filter((p) => typeof p.price === 'number' && p.price <= maxPrice);
     return result;
-  }, [products, query, brand, collection, size, searchParams]);
+  }, [products, query, brand, collection, size, maxPrice, searchParams]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const safePage = Math.min(page, totalPages);
   const start = (safePage - 1) * PER_PAGE;
   const paginated = filtered.slice(start, start + PER_PAGE);
-  const hasFilters = Boolean(query || brand || collection || size);
+  const hasFilters = Boolean(query || brand || collection || size || maxPrice > 0);
 
-  const clearAll = () => { setQuery(''); setBrand(''); setCollection(''); setSize(''); setPage(1); };
+  const clearAll = () => { setQuery(''); setBrand(''); setCollection(''); setSize(''); setMaxPrice(0); setPage(1); };
 
   return (
     <div>
