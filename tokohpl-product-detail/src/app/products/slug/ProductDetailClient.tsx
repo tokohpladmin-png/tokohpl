@@ -13,7 +13,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
   const addItem = useCartStore((s) => s.addItem);
 
   const specs = [
-    ['Kode', product.code],
+    ['Kode Produk', product.code],
     ['Desain', product.name],
     ['Merek', product.brand],
     ['Koleksi', product.collection],
@@ -55,15 +55,15 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
           {/* Detail */}
           <div>
-            <p className="label text-hpl-gold mb-3">{product.brand}</p>
-            <h1 className="display text-hpl-ink text-3xl sm:text-4xl mb-2 leading-tight">
-              {product.itemName || `${product.code} - ${product.brand} HPL | ${product.name}`}
-            </h1>
+            <p className="label text-hpl-500 mb-2 text-[10px] tracking-[0.16em]">
+              {product.code} · {product.brand} HPL · {product.size}
+            </p>
+            <h1 className="display text-hpl-ink text-3xl sm:text-4xl mb-6">{product.name}</h1>
 
             <div className="border-t border-b border-hpl-line py-5 mb-7">
               <span className="font-display text-3xl font-light text-hpl-ink">{formatIDR(product.price)}</span>
               <p className="mt-2 text-[11px] tracking-[0.14em] uppercase text-hpl-400">
-                Harga sudah termasuk PPN
+                Harga sudah termasuk PPN 11%
               </p>
             </div>
 

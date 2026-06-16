@@ -13,7 +13,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
   const addItem = useCartStore((s) => s.addItem);
 
   const specs = [
-    ['Kode', product.code],
+    ['Kode Produk', product.code],
     ['Desain', product.name],
     ['Merek', product.brand],
     ['Koleksi', product.collection],
@@ -63,7 +63,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <div className="border-t border-b border-hpl-line py-5 mb-7">
               <span className="font-display text-3xl font-light text-hpl-ink">{formatIDR(product.price)}</span>
               <p className="mt-2 text-[11px] tracking-[0.14em] uppercase text-hpl-400">
-                Harga sudah termasuk PPN
+                Harga sudah termasuk PPN 11%
               </p>
             </div>
 
