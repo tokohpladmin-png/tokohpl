@@ -92,28 +92,14 @@ export default async function HomePage() {
       {/* Brand cards */}
       <section className="border-b border-hpl-line">
         <div className="shell py-14 sm:py-20">
-          <div className="mb-10">
-            <p className="label mb-3">Merek Resmi Kami</p>
-            <h2 className="display text-hpl-ink text-4xl sm:text-5xl">Dua Merek Terpercaya</h2>
-          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-hpl-line border border-hpl-line">
 
             {/* EDL */}
             <Link href="/products?brand=EDL"
               className="bg-white p-8 sm:p-10 hover:bg-hpl-50 transition-colors group">
-              {/* EDL logo mark */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-10 bg-hpl-ink flex items-center justify-center">
-                  <span className="text-white text-[11px] font-black tracking-[0.2em]">EDL</span>
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-hpl-500">Singapore</p>
-                  <p className="text-[10px] text-hpl-400">High Pressure Laminate</p>
-                </div>
-              </div>
               <p className="text-[18px] font-semibold text-hpl-ink mb-3 group-hover:text-hpl-accent transition-colors">EDL HPL</p>
               <p className="text-[13px] leading-7 text-hpl-500 mb-5">
-                Merek HPL premium asal Singapura yang menghadirkan koleksi lengkap dengan inovasi desain dan teknologi terkini. EDL menawarkan lebih dari 500 pilihan motif — kayu, solid, pola, marmer, batu, dan metal — untuk mewujudkan konsep interior Anda. Dikenal karena kualitas finishing yang konsisten dan daya tahan tinggi.
+                Merek HPL premium asal Singapura yang menghadirkan koleksi lengkap dengan inovasi desain dan teknologi terkini. EDL menawarkan lebih dari 500 pilihan motif — kayu, solid, pola, marmer, batu, dan metal — untuk mewujudkan konsep interior Anda.
               </p>
               <div className="flex flex-wrap gap-2 mb-5">
                 {['Wood', 'Solid', 'Pattern', 'Marble', 'Stone', 'Metal', 'Aptico'].map(c => (
@@ -126,16 +112,6 @@ export default async function HomePage() {
             {/* Lamitak */}
             <Link href="/products?brand=LAMITAK"
               className="bg-white p-8 sm:p-10 hover:bg-hpl-50 transition-colors group">
-              {/* Lamitak logo mark */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-10 bg-[#1a3a5c] flex items-center justify-center">
-                  <span className="text-white text-[8px] font-black tracking-[0.15em]">LAMITAK</span>
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-hpl-500">Singapore</p>
-                  <p className="text-[10px] text-hpl-400">Inspiring Spaces</p>
-                </div>
-              </div>
               <p className="text-[18px] font-semibold text-hpl-ink mb-3 group-hover:text-hpl-accent transition-colors">Lamitak HPL</p>
               <p className="text-[13px] leading-7 text-hpl-500 mb-5">
                 Merek HPL premium asal Singapura yang telah hadir sejak 2001 dengan tagline <em>Inspiring Spaces</em>. Lamitak dikenal dengan desain eksklusif, finishing autentik yang tampak natural, dan komitmen pada material ramah lingkungan. Banyak digunakan pada proyek hotel, apartemen, dan kantor premium di Indonesia.
