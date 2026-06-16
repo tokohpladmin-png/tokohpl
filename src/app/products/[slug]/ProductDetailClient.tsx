@@ -19,7 +19,6 @@ export function ProductDetailClient({ product }: { product: Product }) {
     ['Kategori', product.category],
     ['Ukuran', product.size],
     ['Ketebalan', product.thickness],
-    ['Finish', product.finish],
   ].filter(([, v]) => Boolean(v));
 
   return (
