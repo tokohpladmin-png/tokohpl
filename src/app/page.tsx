@@ -7,7 +7,7 @@ export const revalidate = 600;
 
 export default async function HomePage() {
   const [products, filterOptions] = await Promise.all([getPublicProducts(), getFilterOptions()]);
-  const featured = products.slice(0, 8);
+  const featured = products.filter(p => p.isBestSeller).slice(0, 8);
   const promoProducts = products.filter(p => p.isPromo).slice(0, 8);
 
   return (
@@ -151,7 +151,7 @@ export default async function HomePage() {
             <div className="flex items-end justify-between mb-10">
               <div>
                 <p className="label mb-3">Pilihan Editor</p>
-                <h2 className="display text-hpl-ink text-4xl sm:text-5xl">Produk Pilihan</h2>
+                <h2 className="display text-hpl-ink text-4xl sm:text-5xl">Paling Laris</h2>
               </div>
               <Link href="/products" className="hidden sm:block text-[11px] font-semibold tracking-[0.18em] uppercase text-hpl-500 hover:text-hpl-ink transition-colors">
                 Lihat Semua →
