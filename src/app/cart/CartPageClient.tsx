@@ -10,7 +10,7 @@ import { CouponInput } from '@/components/CouponInput';
 
 export function CartPageClient() {
   const {
-    items, removeItem, updateQuantity, clearCart,
+    items, removeItem, updateQuantity, clearCart, getItemRate,
     subtotal, totalDiscount, grandTotal, shippingFee, orderTotal,
     totalQty, appliedCoupon, province,
   } = useCartStore();
