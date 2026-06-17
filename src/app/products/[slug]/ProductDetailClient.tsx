@@ -61,7 +61,15 @@ export function ProductDetailClient({ product }: { product: Product }) {
             </h1>
 
             <div className="border-t border-b border-hpl-line py-5 mb-7">
-              <span className="font-display text-3xl font-light text-hpl-ink">{formatIDR(product.price)}</span>
+              {product.isPromo && typeof product.price === 'number' ? (
+                <div className="flex items-baseline gap-3">
+                  <span className="font-display text-3xl font-light text-hpl-accent">{formatIDR(Math.round(product.price * 0.95))}</span>
+                  <span className="text-[15px] line-through text-hpl-400">{formatIDR(product.price)}</span>
+                  <span className="text-[11px] font-bold tracking-[0.1em] uppercase bg-hpl-accent text-white px-2 py-0.5">Promo 5%</span>
+                </div>
+              ) : (
+                <span className="font-display text-3xl font-light text-hpl-ink">{formatIDR(product.price)}</span>
+              )}
               <p className="mt-2 text-[11px] tracking-[0.14em] uppercase text-hpl-400">
                 Harga sudah termasuk PPN
               </p>

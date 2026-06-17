@@ -16,7 +16,7 @@ export function CartDrawer() {
     items: allItems, isDrawerOpen,
     subtotal, totalDiscount, grandTotal, shippingFee, orderTotal,
     totalQty, appliedCoupon, province,
-    closeDrawer, removeItem, updateQuantity,
+    closeDrawer, removeItem, updateQuantity, getItemRate,
   } = store;
 
   // Use empty state until client-side hydration completes
@@ -112,9 +112,21 @@ export function CartDrawer() {
                       <p className="text-[12px] font-medium text-hpl-ink leading-[1.4] line-clamp-2 mb-2">{item.product.name}</p>
                       <div className="flex items-center justify-between gap-2 flex-wrap">
                         <QuantityInput value={item.quantity} onChange={(v) => updateQuantity(item.product.code, v)}/>
-                        <p className="text-[13px] font-semibold text-hpl-ink">
-                          {formatIDR(typeof item.product.price === 'number' ? item.product.price * item.quantity : null)}
-                        </p>
+                        <div className="text-right">
+                          {(() => {
+                            const rate = getItemRate(item.product.code);
+                            const full = typeof item.product.price === 'number' ? item.product.price * item.quantity : null;
+                            const discounted = full !== null && rate > 0 ? Math.round(full * (1 - rate)) : null;
+                            return discounted ? (
+                              <>
+                                <p className="text-[11px] line-through text-hpl-400">{formatIDR(full)}</p>
+                                <p className="text-[13px] font-semibold text-hpl-accent">{formatIDR(discounted)}</p>
+                              </>
+                            ) : (
+                              <p className="text-[13px] font-semibold text-hpl-ink">{formatIDR(full)}</p>
+                            );
+                          })()}
+                        </div>
                       </div>
                     </div>
                   </li>
@@ -144,7 +156,7 @@ export function CartDrawer() {
                 <div className="flex justify-between text-[12px]">
                   <span className="text-hpl-600">Ongkos Kirim</span>
                   <span className={ship === 0 ? 'text-hpl-accent font-semibold' : 'text-hpl-ink'}>
-                    {ship === 0 ? 'Gratis' : formatIDR(ship)}
+                    {formatIDR(ship)}
                   </span>
                 </div>
               ) : (

@@ -78,12 +78,28 @@ export function CartPageClient() {
                           {item.product.brand} · {item.product.code}
                         </p>
                         <p className="text-[14px] font-medium text-hpl-ink leading-[1.4] mb-1">{item.product.name}</p>
-                        <p className="text-[12px] text-hpl-500 mb-4">{formatIDR(item.product.price)} / lembar</p>
+                        {(() => {
+                        const rate = getItemRate(item.product.code);
+                        return rate > 0 ? (
+                          <p className="text-[12px] text-hpl-500 mb-4">
+                            <span className="line-through">{formatIDR(item.product.price)}</span>
+                            {' → '}
+                            <span className="text-hpl-accent font-semibold">{formatIDR(typeof item.product.price === 'number' ? Math.round(item.product.price * (1 - rate)) : null)}</span>
+                            {' / lembar'}
+                          </p>
+                        ) : (
+                          <p className="text-[12px] text-hpl-500 mb-4">{formatIDR(item.product.price)} / lembar</p>
+                        );
+                      })()}
                         <div className="flex items-center justify-between flex-wrap gap-3">
                           <QuantityInput value={item.quantity} onChange={(v) => updateQuantity(item.product.code, v)}/>
                           <div className="flex items-center gap-4">
                             <span className="text-[15px] font-semibold text-hpl-ink">
-                              {formatIDR(typeof item.product.price === 'number' ? item.product.price * item.quantity : null)}
+                              {(() => {
+                          const rate = getItemRate(item.product.code);
+                          const full = typeof item.product.price === 'number' ? item.product.price * item.quantity : null;
+                          return formatIDR(full !== null && rate > 0 ? Math.round(full * (1 - rate)) : full);
+                        })()}
                             </span>
                             <button type="button" onClick={() => removeItem(item.product.code)}
                               className="text-[11px] tracking-[0.12em] uppercase text-hpl-400 hover:text-red-600 transition-colors">

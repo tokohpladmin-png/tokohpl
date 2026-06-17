@@ -28,6 +28,7 @@ interface CartState {
   removeItem: (code: string) => void;
   updateQuantity: (code: string, quantity: number) => void;
   clearCart: () => void;
+  getItemRate: (productCode: string) => number;
   openDrawer: () => void;
   closeDrawer: () => void;
   setProvince: (province: string) => void;
@@ -107,6 +108,16 @@ export const useCartStore = create<CartState>()(
       },
 
       removeCoupon: () => set({ appliedCoupon: null, couponCode: '' }),
+
+      // Returns the effective unit price for a single item after discount
+      getItemRate: (productCode: string) => {
+        const { items, appliedCoupon } = get();
+        const totalQty = items.reduce((s, i) => s + i.quantity, 0);
+        const volumeRate = getVolumeTier(totalQty).rate;
+        const item = items.find(i => i.product.code === productCode);
+        if (!item) return 0;
+        return getEffectiveRate(volumeRate, appliedCoupon, item.product.brand, item.product.code, item.product.isPromo);
+      },
 
       totalItems: () => get().items.reduce((sum, i) => sum + i.quantity, 0),
       totalQty:   () => get().items.reduce((sum, i) => sum + i.quantity, 0),
