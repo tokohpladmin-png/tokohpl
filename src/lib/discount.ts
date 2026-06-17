@@ -174,16 +174,23 @@ export function getCouponRateForProduct(
 }
 
 // ─────────────────────────────────────────────
-//  Per-line effective discount
-//  Higher of volume rate vs coupon rate wins
+//  Promo item base discount
+//  isPromo products always get at least 5%
+//  Volume discount only wins if 7% or higher
 // ─────────────────────────────────────────────
+export const PROMO_RATE = 0.05; // 5% fixed for promo items
+
 export function getEffectiveRate(
   volumeRate: number,
   coupon: Coupon | null,
   brand: string,
-  productCode: string
+  productCode: string,
+  isPromo = false,
 ): number {
-  if (!coupon) return volumeRate;
-  const couponRate = getCouponRateForProduct(coupon, brand, productCode);
-  return Math.max(volumeRate, couponRate);
+  const couponRate = coupon ? getCouponRateForProduct(coupon, brand, productCode) : 0;
+
+  // For promo items: base is 5%, volume only wins if >= 7%
+  const baseRate = isPromo ? Math.max(PROMO_RATE, volumeRate >= 0.07 ? volumeRate : PROMO_RATE) : volumeRate;
+
+  return Math.max(baseRate, couponRate);
 }

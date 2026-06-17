@@ -122,7 +122,7 @@ export const useCartStore = create<CartState>()(
         const volumeRate = getVolumeTier(totalQty).rate;
         return items.reduce((sum, item) => {
           if (typeof item.product.price !== 'number') return sum;
-          const rate = getEffectiveRate(volumeRate, appliedCoupon, item.product.brand, item.product.code);
+          const rate = getEffectiveRate(volumeRate, appliedCoupon, item.product.brand, item.product.code, item.product.isPromo);
           return sum + Math.round(item.product.price * item.quantity * rate);
         }, 0);
       },
