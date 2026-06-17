@@ -17,6 +17,16 @@ export function ProductCard({ product }: { product: Product }) {
             alt={product.name}
           />
           <div className="absolute inset-0 bg-hpl-ink/0 transition-colors duration-200 group-hover:bg-hpl-ink/[0.03]" />
+          {product.isPromo && (
+            <span className="absolute top-2 left-2 bg-hpl-accent text-white text-[9px] font-bold tracking-[0.12em] uppercase px-2 py-1">
+              Promo 5%
+            </span>
+          )}
+          {product.isNew && !product.isPromo && (
+            <span className="absolute top-2 left-2 bg-hpl-ink text-white text-[9px] font-bold tracking-[0.12em] uppercase px-2 py-1">
+              Baru
+            </span>
+          )}
         </div>
       </Link>
 

@@ -133,6 +133,29 @@ export function ProductExplorer({ products, filterOptions }: Props) {
             </label>
 <Select label="Ukuran" value={size} onChange={setSize}
               options={filterOptions.sizes} placeholder="Semua Ukuran"/>
+            <div className="flex flex-col gap-1">
+              <label className="label text-hpl-600">Urutkan</label>
+              <select value={sortBy} onChange={(e) => { setSortBy(e.target.value); setPage(1); }}
+                className="field-select">
+                <option value="default">Relevansi</option>
+                <option value="price-asc">Harga: Terendah</option>
+                <option value="price-desc">Harga: Tertinggi</option>
+                <option value="name-asc">Nama: A–Z</option>
+                <option value="new">Terbaru</option>
+              </select>
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="label text-hpl-600">Harga Maks</label>
+              <select value={maxPrice} onChange={(e) => { setMaxPrice(Number(e.target.value)); setPage(1); }}
+                className="field-select">
+                <option value={0}>Semua Harga</option>
+                <option value={500000}>s/d Rp 500.000</option>
+                <option value={750000}>s/d Rp 750.000</option>
+                <option value={1000000}>s/d Rp 1.000.000</option>
+                <option value={1500000}>s/d Rp 1.500.000</option>
+                <option value={2000000}>s/d Rp 2.000.000</option>
+              </select>
+            </div>
           </div>
           <div className="mt-4 flex items-center justify-between gap-3 text-sm text-hpl-500">
             <p>
