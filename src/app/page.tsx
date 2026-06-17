@@ -20,13 +20,11 @@ export default async function HomePage() {
         <div className="shell w-full grid lg:grid-cols-2 gap-12 py-20 lg:py-28 items-center">
           <div className="animate-fade-up">
             <p className="label text-hpl-300 mb-5">Distributor Resmi HPL Indonesia</p>
-            <h1 className="display text-white text-5xl sm:text-6xl lg:text-7xl xl:text-8xl mb-6 leading-[1.0]">
-              Material<br />
-              <em className="text-hpl-300 not-italic">Interior</em><br />
-              Terbaik
+            <h1 className="display text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-[1.1]">
+              Kini Anda dapat dengan mudah mendapatkan HPL berkualitas
             </h1>
             <p className="text-[14px] leading-7 text-white/65 max-w-md mb-8">
-              Temukan ribuan pilihan HPL berkualitas dari EDL dan Lamitak. Pengiriman ke seluruh Indonesia dengan tarif kompetitif.
+              Temukan ribuan pilihan HPL berkualitas dari EDL dan Lamitak. Pengiriman ke seluruh Indonesia dengan harga kompetitif dan layanan yang berpusat pada pelanggan.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/products" className="btn-ghost-white">
@@ -179,9 +177,9 @@ export default async function HomePage() {
             </div>
             <div className="grid sm:grid-cols-3 gap-px bg-hpl-line border border-hpl-line">
               {[
-                { title: 'Harga Transparan', body: 'Semua harga sudah termasuk PPN 11%. Tidak ada biaya tersembunyi.' },
+                { title: 'Harga Transparan', body: 'Harga yang tercantum pada situs ini merupakan harga resmi. Anda juga akan mendapatkan diskon dan potongan ongkos kirim untuk pembelian dalam jumlah tertentu.' },
                 { title: 'Pengiriman Terpercaya', body: 'Pengiriman ke seluruh Indonesia melalui mitra ekspedisi terpercaya dengan tarif kompetitif.' },
-                { title: 'Produk Resmi', body: 'Distributor resmi EDL dan Lamitak dengan produk bergaransi keaslian.' },
+                { title: 'Produk Resmi', body: 'Distributor resmi EDL dan Lamitak dengan produk berkualitas yang dijamin keasliannya. Anda akan mendapatkan produk sesuai dengan yang Anda butuhkan.' },
               ].map((item) => (
                 <div key={item.title} className="bg-white p-6">
                   <div className="w-6 h-[1.5px] bg-hpl-gold mb-4"/>
