@@ -1,9 +1,11 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { useCartStore } from '@/store/cartStore';
 import { getVolumeTier, getNextVolumeTier, VOLUME_TIERS } from '@/lib/discount';
 import { formatIDR } from '@/lib/utils';
 
 export function DiscountBadge() {
+  const t = useTranslations('Cart');
   const totalQty  = useCartStore((s) => s.totalQty());
   const totalDisc = useCartStore((s) => s.totalDiscount());
   const coupon    = useCartStore((s) => s.appliedCoupon);
@@ -21,7 +23,7 @@ export function DiscountBadge() {
           <div className="flex items-center gap-2 flex-wrap">
             {tier.rate > 0 && (
               <span className="bg-hpl-accent text-white text-[9px] font-bold tracking-[0.14em] uppercase px-2 py-0.5">
-                VOLUME {Math.round(tier.rate * 100)}%
+                {t('volBadge', { pct: Math.round(tier.rate * 100) })}
               </span>
             )}
             {coupon && (
@@ -30,19 +32,27 @@ export function DiscountBadge() {
               </span>
             )}
             <span className="text-[12px] text-hpl-600">
-              Anda hemat {formatIDR(totalDisc)}
+              {t('youSave', { amount: formatIDR(totalDisc) ?? '' })}
             </span>
           </div>
           {!coupon && next && (
             <span className="text-[11px] text-hpl-500">
-              Tambah {next.minQty - totalQty} lembar → diskon {Math.round(next.rate * 100)}%
+              {t.rich('addMoreForDiscount', {
+                n: next.minQty - totalQty,
+                pct: Math.round(next.rate * 100),
+                strong: (chunks) => <strong className="text-hpl-accent">{chunks}</strong>,
+              })}
             </span>
           )}
         </div>
       ) : (
         !coupon && next && (
           <p className="text-[11px] text-hpl-500 m-0">
-            Tambah <strong className="text-hpl-accent">{next.minQty - totalQty} lembar lagi</strong> untuk mendapatkan diskon {Math.round(next.rate * 100)}%
+            {t.rich('addMoreForDiscount', {
+              n: next.minQty - totalQty,
+              pct: Math.round(next.rate * 100),
+              strong: (chunks) => <strong className="text-hpl-accent">{chunks}</strong>,
+            })}
           </p>
         )
       )}
@@ -51,6 +61,8 @@ export function DiscountBadge() {
 }
 
 export function DiscountTierTable() {
+  const t = useTranslations('Cart');
+  const tDiscount = useTranslations('Discount');
   const totalQty    = useCartStore((s) => s.totalQty());
   const currentTier = getVolumeTier(totalQty);
 
@@ -58,7 +70,7 @@ export function DiscountTierTable() {
     <div className="border border-hpl-line">
       <div className="border-b border-hpl-line px-4 py-3 bg-hpl-50">
         <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-hpl-ink">
-          Program Diskon
+          {t('discountProgram')}
         </p>
       </div>
       {VOLUME_TIERS.map((tier) => {
@@ -69,18 +81,18 @@ export function DiscountTierTable() {
             style={{ borderLeft: isActive ? '3px solid #a8763e' : '3px solid transparent' }}>
             <span className={`text-[12px] ${isActive ? 'font-semibold text-hpl-ink' : 'text-hpl-500'}`}>
               {tier.maxQty === null
-                ? `≥ ${tier.minQty} lembar`
+                ? t('sheetsMinPlus', { min: tier.minQty })
                 : tier.minQty === 0
-                  ? `1–${tier.maxQty} lembar`
-                  : `${tier.minQty}–${tier.maxQty} lembar`}
+                  ? t('sheetsRangeFrom1', { max: tier.maxQty })
+                  : t('sheetsRange', { min: tier.minQty, max: tier.maxQty })}
             </span>
             <div className="flex items-center gap-2">
               <span className={`text-[12px] font-bold ${tier.rate === 0 ? 'text-hpl-400' : 'text-hpl-accent'}`}>
-                {tier.rate === 0 ? 'Tanpa diskon' : `Diskon ${Math.round(tier.rate * 100)}%`}
+                {tDiscount(`tiers.${tier.labelKey}`)}
               </span>
               {isActive && (
                 <span className="text-[8px] font-bold tracking-[0.16em] uppercase bg-hpl-accent text-white px-2 py-0.5">
-                  Aktif
+                  {t('active')}
                 </span>
               )}
             </div>

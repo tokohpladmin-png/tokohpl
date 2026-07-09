@@ -1,69 +1,36 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
-const TESTIMONIALS = [
-  {
-    name: 'Budi Santoso',
-    role: 'Interior Designer',
-    city: 'Jakarta',
-    text: 'Proses pemesanan sangat mudah dan cepat. Produk HPL yang saya terima sesuai dengan spesifikasi yang tertera. Sangat membantu untuk proyek interior klien saya.',
-    rating: 5,
-  },
-  {
-    name: 'Rina Kusuma',
-    role: 'Kontraktor',
-    city: 'Surabaya',
-    text: 'Sudah beberapa kali memesan dari TokoHPL. Harga transparan, tidak ada biaya tersembunyi. Pengiriman ke Surabaya tepat waktu. Pasti akan pesan lagi.',
-    rating: 5,
-  },
-  {
-    name: 'Hendri Wijaya',
-    role: 'Furniture Maker',
-    city: 'Bandung',
-    text: 'Koleksi EDL dan Lamitak lengkap sekali. Saya sering cari motif tertentu dan selalu ada. Diskon volume juga sangat membantu untuk order dalam jumlah besar.',
-    rating: 5,
-  },
-  {
-    name: 'Sari Dewi',
-    role: 'Arsitek',
-    city: 'Bali',
-    text: 'Pertama kali mencoba order online HPL dan pengalaman yang menyenangkan. Tim sangat responsif via WhatsApp. Produk berkualitas dan terjamin keasliannya.',
-    rating: 5,
-  },
-  {
-    name: 'Agus Pramono',
-    role: 'Project Buyer',
-    city: 'Semarang',
-    text: 'Pembelian untuk proyek hotel. Order dalam jumlah besar, proses lancar, dan mendapat diskon volume yang cukup signifikan. Terima kasih TokoHPL!',
-    rating: 5,
-  },
-];
+type Testimonial = { name: string; role: string; city: string; text: string; rating: number };
 
 const INTERVAL = 4000;
 
 export function TestimonialsSlider() {
+  const t = useTranslations('Home.testimonials');
+  const testimonials = t.raw('items') as Testimonial[];
   const [current, setCurrent] = useState(0);
   const [paused, setPaused]   = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const go = (idx: number) => setCurrent((idx + TESTIMONIALS.length) % TESTIMONIALS.length);
+  const go = (idx: number) => setCurrent((idx + testimonials.length) % testimonials.length);
 
   useEffect(() => {
     if (paused) return;
-    timerRef.current = setInterval(() => setCurrent(c => (c + 1) % TESTIMONIALS.length), INTERVAL);
+    timerRef.current = setInterval(() => setCurrent(c => (c + 1) % testimonials.length), INTERVAL);
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, [paused]);
+  }, [paused, testimonials.length]);
 
-  const t = TESTIMONIALS[current];
+  const item = testimonials[current];
 
   return (
     <section className="border-b border-hpl-line">
       <div className="shell py-14 sm:py-20">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <p className="label mb-3">Testimoni Pelanggan</p>
+            <p className="label mb-3">{t('eyebrow')}</p>
             <h2 className="text-[clamp(28px,4vw,44px)] font-light tracking-[-0.03em]">
-              Pilihan Para Profesional
+              {t('heading')}
             </h2>
           </div>
           {/* Nav arrows */}
@@ -95,13 +62,13 @@ export function TestimonialsSlider() {
               {/* Left — avatar */}
               <div className="bg-hpl-50 flex flex-col items-center justify-center py-10 px-8 text-center">
                 <div className="w-16 h-16 bg-hpl-ink text-white flex items-center justify-center text-[22px] font-bold mb-4">
-                  {t.name.charAt(0)}
+                  {item.name.charAt(0)}
                 </div>
-                <p className="text-[14px] font-semibold text-hpl-ink mb-1">{t.name}</p>
-                <p className="text-[11px] tracking-[0.1em] uppercase text-hpl-500 mb-0.5">{t.role}</p>
-                <p className="text-[11px] text-hpl-400">{t.city}</p>
+                <p className="text-[14px] font-semibold text-hpl-ink mb-1">{item.name}</p>
+                <p className="text-[11px] tracking-[0.1em] uppercase text-hpl-500 mb-0.5">{item.role}</p>
+                <p className="text-[11px] text-hpl-400">{item.city}</p>
                 <div className="flex gap-1 mt-4">
-                  {Array.from({ length: t.rating }).map((_, i) => (
+                  {Array.from({ length: item.rating }).map((_, i) => (
                     <svg key={i} width="12" height="12" viewBox="0 0 12 12" fill="#CC4E2A">
                       <path d="M6 1l1.5 3 3.5.5-2.5 2.5.5 3.5L6 9l-3 1.5.5-3.5L1 4.5l3.5-.5z"/>
                     </svg>
@@ -115,7 +82,7 @@ export function TestimonialsSlider() {
                   <path d="M0 24V14.4C0 6.4 4.8 1.6 14.4 0l1.6 2.4C10.4 3.6 7.6 6.4 7.2 10.4H12V24H0zm20 0V14.4C20 6.4 24.8 1.6 34.4 0L36 2.4C30.4 3.6 27.6 6.4 27.2 10.4H32V24H20z" fill="currentColor"/>
                 </svg>
                 <p className="text-[15px] sm:text-[16px] leading-8 text-hpl-700 mb-6 italic">
-                  "{t.text}"
+                  "{item.text}"
                 </p>
                 <div className="w-8 h-0.5 bg-hpl-accent"/>
               </div>
@@ -125,7 +92,7 @@ export function TestimonialsSlider() {
 
           {/* Dot indicators */}
           <div className="flex justify-center gap-2 mt-5">
-            {TESTIMONIALS.map((_, i) => (
+            {testimonials.map((_, i) => (
               <button key={i} type="button" onClick={() => go(i)}
                 className="transition-all duration-300"
                 style={{

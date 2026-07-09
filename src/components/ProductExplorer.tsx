@@ -1,11 +1,14 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { useLocale, useTranslations } from 'next-intl';
 import type { Product } from '@/types/product';
 import { searchProducts } from '@/lib/products';
+import { formatIDR } from '@/lib/utils';
 import { ProductGrid } from './ProductGrid';
 
 const PER_PAGE = 24;
+const MAX_PRICE_OPTIONS = [500000, 750000, 1000000, 1500000, 2000000];
 
 type Props = {
   products: Product[];
@@ -40,6 +43,8 @@ function Select({ label, value, onChange, options, placeholder }: {
 }
 
 export function ProductExplorer({ products, filterOptions }: Props) {
+  const t = useTranslations('Products');
+  const locale = useLocale();
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(searchParams.get('search') || '');
   const [brand, setBrand] = useState(searchParams.get('brand') || '');
@@ -69,10 +74,10 @@ export function ProductExplorer({ products, filterOptions }: Props) {
     // Sort
     if (sortBy === 'price-asc') result = [...result].sort((a, b) => (a.price ?? 0) - (b.price ?? 0));
     else if (sortBy === 'price-desc') result = [...result].sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
-    else if (sortBy === 'name-asc') result = [...result].sort((a, b) => a.name.localeCompare(b.name, 'id'));
+    else if (sortBy === 'name-asc') result = [...result].sort((a, b) => a.name.localeCompare(b.name, locale));
     else if (sortBy === 'new') result = [...result].sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
     return result;
-  }, [products, query, brand, collection, size, maxPrice, sortBy, searchParams]);
+  }, [products, query, brand, collection, size, maxPrice, sortBy, searchParams, locale]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const safePage = Math.min(page, totalPages);
@@ -82,15 +87,17 @@ export function ProductExplorer({ products, filterOptions }: Props) {
 
   const clearAll = () => { setQuery(''); setBrand(''); setCollection(''); setSize(''); setMaxPrice(0); setSortBy('default'); setPage(1); };
 
+  const brandTabs = [
+    { label: t('tabs.all'), value: '' },
+    { label: t('tabs.edl'), value: 'EDL' },
+    { label: t('tabs.lamitak'), value: 'LAMITAK' },
+  ];
+
   return (
     <div>
       {/* Brand tabs */}
       <div className="flex gap-0 overflow-x-auto border-b border-hpl-line mb-8">
-        {[
-          { label: 'Semua', value: '' },
-          { label: 'EDL HPL', value: 'EDL' },
-          { label: 'Lamitak HPL', value: 'LAMITAK' },
-        ].map((tab) => (
+        {brandTabs.map((tab) => (
           <button
             key={tab.value}
             onClick={() => setBrand(tab.value)}
@@ -112,57 +119,55 @@ export function ProductExplorer({ products, filterOptions }: Props) {
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-hpl-500">
               <path d="M1 3h12M3 7h8M5 11h4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
             </svg>
-            <span className="label text-hpl-700">Filter</span>
+            <span className="label text-hpl-700">{t('filterLabel')}</span>
           </div>
           {hasFilters && (
             <button onClick={clearAll} className="text-[11px] font-medium tracking-[0.12em] uppercase text-hpl-gold hover:text-hpl-ink transition-colors">
-              Hapus Filter
+              {t('clearFilters')}
             </button>
           )}
         </div>
         <div className="p-5">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <label className="block sm:col-span-2 lg:col-span-1">
-              <span className="label text-hpl-600 mb-2 block">Cari Produk</span>
+              <span className="label text-hpl-600 mb-2 block">{t('searchLabel')}</span>
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Kode atau nama produk…"
+                placeholder={t('searchPlaceholder')}
                 className="field w-full"
               />
             </label>
-<Select label="Ukuran" value={size} onChange={setSize}
-              options={filterOptions.sizes} placeholder="Semua Ukuran"/>
+            <Select label={t('sizeLabel')} value={size} onChange={setSize}
+              options={filterOptions.sizes} placeholder={t('allSizes')}/>
             <div className="flex flex-col gap-1">
-              <label className="label text-hpl-600">Urutkan</label>
+              <label className="label text-hpl-600">{t('sortLabel')}</label>
               <select value={sortBy} onChange={(e) => { setSortBy(e.target.value); setPage(1); }}
                 className="field-select">
-                <option value="default">Relevansi</option>
-                <option value="price-asc">Harga: Terendah</option>
-                <option value="price-desc">Harga: Tertinggi</option>
-                <option value="name-asc">Nama: A–Z</option>
-                <option value="new">Terbaru</option>
+                <option value="default">{t('sort.default')}</option>
+                <option value="price-asc">{t('sort.priceAsc')}</option>
+                <option value="price-desc">{t('sort.priceDesc')}</option>
+                <option value="name-asc">{t('sort.nameAsc')}</option>
+                <option value="new">{t('sort.new')}</option>
               </select>
             </div>
             <div className="flex flex-col gap-1">
-              <label className="label text-hpl-600">Harga Maks</label>
+              <label className="label text-hpl-600">{t('maxPriceLabel')}</label>
               <select value={maxPrice} onChange={(e) => { setMaxPrice(Number(e.target.value)); setPage(1); }}
                 className="field-select">
-                <option value={0}>Semua Harga</option>
-                <option value={500000}>s/d Rp 500.000</option>
-                <option value={750000}>s/d Rp 750.000</option>
-                <option value={1000000}>s/d Rp 1.000.000</option>
-                <option value={1500000}>s/d Rp 1.500.000</option>
-                <option value={2000000}>s/d Rp 2.000.000</option>
+                <option value={0}>{t('allPrices')}</option>
+                {MAX_PRICE_OPTIONS.map((v) => (
+                  <option key={v} value={v}>{t('upTo', { amount: formatIDR(v) ?? '' })}</option>
+                ))}
               </select>
             </div>
           </div>
           <div className="mt-4 flex items-center justify-between gap-3 text-sm text-hpl-500">
             <p>
               <span className="font-semibold text-hpl-ink">{filtered.length}</span>{' '}
-              produk ditemukan
+              {t('resultsFound')}
               {filtered.length > 0 && (
-                <span> · Menampilkan <span className="font-semibold text-hpl-ink">{start + 1}–{Math.min(start + PER_PAGE, filtered.length)}</span></span>
+                <span> · {t('showing', { from: start + 1, to: Math.min(start + PER_PAGE, filtered.length) })}</span>
               )}
             </p>
           </div>

@@ -1,11 +1,14 @@
+import { useTranslations } from 'next-intl';
 import type { Product } from '@/types/product';
 import { ProductCard } from './ProductCard';
 
 export function ProductGrid({ products }: { products: Product[] }) {
+  const t = useTranslations('Products');
+
   if (products.length === 0) {
     return (
       <div className="py-20 text-center border border-hpl-line bg-white">
-        <p className="text-[13px] text-hpl-500">Tidak ada produk ditemukan.</p>
+        <p className="text-[13px] text-hpl-500">{t('emptyState')}</p>
       </div>
     );
   }

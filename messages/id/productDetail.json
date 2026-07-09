@@ -1,0 +1,33 @@
+{
+  "breadcrumbHome": "Beranda",
+  "breadcrumbProducts": "Produk",
+  "promoBadge": "Promo 5%",
+  "priceIncludesVat": "Harga sudah termasuk PPN",
+  "qtyLabel": "Jumlah",
+  "addToCart": "Tambah ke Keranjang",
+  "buyNow": "Beli Sekarang",
+  "askWhatsapp": "Tanya via WhatsApp",
+  "shippingNote": "Pengiriman ke seluruh Indonesia. Estimasi tiba tergantung dari lokasi tujuan.",
+  "colorDisclaimer": "Warna produk pada gambar mungkin sedikit berbeda dari produk asli karena pengaturan layar masing-masing perangkat.",
+  "specsHeading": "Spesifikasi Produk",
+  "specs": {
+    "code": "Kode",
+    "design": "Desain",
+    "brand": "Merek",
+    "collection": "Koleksi",
+    "size": "Ukuran",
+    "thickness": "Ketebalan"
+  },
+  "meta": {
+    "descFrom": "{name} ({code}) dari {brand} HPL.",
+    "descSize": "Ukuran {size}.",
+    "descThickness": "Ketebalan {thickness}.",
+    "descCollection": "Koleksi {collection}.",
+    "descClosing": "Beli online dengan harga terbaik di TokoHPL. Pengiriman ke seluruh Indonesia.",
+    "keywordBuy": "beli {brand} HPL",
+    "keywordPrice": "harga {code}",
+    "keywordDesignHpl": "{name} HPL",
+    "keywordBuyOnline": "beli HPL online",
+    "keywordIndonesia": "HPL Indonesia"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "metaTitle": "Panduan Belanja — TokoHPL",
+  "metaDescription": "Cara mudah memesan HPL di tokohpl.com. Panduan lengkap dari pilih produk hingga konfirmasi pembayaran.",
+  "eyebrow": "Bantuan",
+  "heading": "Panduan Belanja",
+  "subheading": "Cara mudah memesan HPL di tokohpl.com — dari pilih produk hingga produk tiba di lokasi Anda.",
+  "stepsLabel": "Langkah Pemesanan",
+  "steps": [
+    {
+      "num": "01",
+      "title": "Temukan Produk",
+      "desc": "Jelajahi katalog produk EDL dan Lamitak melalui menu Produk. Gunakan filter merek, koleksi, atau ukuran untuk mempersempit pilihan. Anda juga dapat mencari langsung menggunakan kode produk (contoh: WY 5216D).",
+      "tips": ["Gunakan tab koleksi untuk filter cepat: Wood, Solid, Pattern, Stone", "Klik produk untuk melihat spesifikasi lengkap dan tabel diskon volume"]
+    },
+    {
+      "num": "02",
+      "title": "Tambah ke Keranjang",
+      "desc": "Pilih jumlah lembar yang diinginkan, lalu klik \"Tambah ke Keranjang\". Anda dapat menambahkan produk dari berbagai merek dalam satu pesanan. Keranjang akan muncul di sisi kanan layar.",
+      "tips": ["Minimum pembelian: 1 lembar", "Diskon volume diterapkan otomatis berdasarkan total lembar", "Jika tersedia, Anda dapat menambahkan Edge Band yang sesuai"]
+    },
+    {
+      "num": "03",
+      "title": "Masukkan Kode Diskon (Opsional)",
+      "desc": "Jika Anda memiliki kode diskon member (Bronze, Silver, Gold, atau Platinum), masukkan kode tersebut di kolom Kode Kupon pada halaman keranjang. Sistem akan menerapkan diskon yang lebih besar antara kode kupon dan diskon volume.",
+      "tips": ["Kode kupon bersifat rahasia — jangan bagikan kepada pihak lain", "Diskon tidak berlaku untuk Edge Band"]
+    },
+    {
+      "num": "04",
+      "title": "Isi Data Pengiriman",
+      "desc": "Klik \"Lanjut ke Checkout\" dan isi data diri serta alamat pengiriman dengan lengkap dan benar. Pastikan nomor WhatsApp aktif karena tim kami akan menghubungi Anda melalui nomor tersebut.",
+      "tips": ["Pilih provinsi terlebih dahulu untuk melihat estimasi ongkos kirim", "Gunakan nama penerima yang sesuai untuk keperluan pengiriman"]
+    },
+    {
+      "num": "05",
+      "title": "Konfirmasi Pesanan",
+      "desc": "Periksa kembali seluruh detail pesanan pada halaman Konfirmasi Pesanan — produk, jumlah, harga, dan alamat pengiriman. Jika ada yang perlu diubah, klik \"Ubah Pesanan\". Jika sudah sesuai, klik \"Konfirmasi Pesanan\".",
+      "tips": ["Setelah dikonfirmasi, pesanan tidak dapat diubah melalui website", "Untuk perubahan setelah konfirmasi, segera hubungi kami via WhatsApp"]
+    },
+    {
+      "num": "06",
+      "title": "Lakukan Pembayaran",
+      "desc": "Setelah konfirmasi, Anda akan mendapatkan nomor pesanan dan instruksi pembayaran. Transfer sesuai jumlah yang tertera ke rekening BCA kami dalam waktu 24 jam. Gunakan nomor pesanan sebagai keterangan transfer.",
+      "tips": ["Transfer tepat sesuai jumlah — jangan dibulatkan", "Gunakan nomor pesanan (contoh: TPL-20250614-1234) sebagai keterangan transfer", "Pesanan yang belum dibayar dalam 24 jam akan dibatalkan otomatis"]
+    },
+    {
+      "num": "07",
+      "title": "Konfirmasi Pembayaran",
+      "desc": "Setelah transfer, kirim konfirmasi pembayaran via WhatsApp dengan menekan tombol yang tersedia pada halaman pesanan. Pesan WhatsApp sudah terisi otomatis dengan nomor pesanan dan jumlah transfer.",
+      "tips": ["Tim kami akan memverifikasi pembayaran dalam 1×24 jam kerja", "Simpan bukti transfer Anda sebagai arsip"]
+    },
+    {
+      "num": "08",
+      "title": "Proses & Pengiriman",
+      "desc": "Setelah pembayaran terverifikasi, tim kami akan memproses dan mengirimkan pesanan Anda. Estimasi pengiriman: 3–7 hari kerja untuk Jawa dan Bali, 7–21 hari kerja untuk luar Jawa.",
+      "tips": ["Tim kami akan menginformasikan nomor resi pengiriman via WhatsApp", "Untuk pengiriman ke luar Jabodetabek, produk akan dikemas menggunakan peti kayu pelindung"]
+    }
+  ],
+  "paymentInfoLabel": "Informasi Pembayaran",
+  "bankName": "Bank Central Asia (BCA)",
+  "accountNumberLabel": "Nomor Rekening",
+  "accountHolderLabel": "Atas Nama",
+  "branchLabel": "KCP",
+  "paymentTermsLabel": "Ketentuan Pembayaran",
+  "paymentTerms": [
+    "Pembayaran dilakukan melalui transfer bank BCA",
+    "Transfer tepat sesuai jumlah yang tertera",
+    "Gunakan nomor pesanan sebagai keterangan transfer",
+    "Batas waktu pembayaran: 24 jam sejak pesanan dikonfirmasi",
+    "Pesanan yang melewati batas waktu akan dibatalkan otomatis",
+    "Konfirmasi pembayaran via WhatsApp setelah transfer"
+  ],
+  "faqLabel": "Pertanyaan Umum",
+  "faqs": [
+    { "q": "Apakah saya perlu membuat akun untuk memesan?", "a": "Tidak. TokoHPL mendukung pembelian tanpa akun (guest checkout). Anda cukup mengisi data pengiriman saat checkout." },
+    { "q": "Berapa minimum pembelian?", "a": "Tidak ada minimum pembelian dalam lembar. Anda dapat memesan mulai dari 1 lembar. Namun, diskon volume berlaku mulai dari 10 lembar." },
+    { "q": "Apakah harga yang tertera sudah termasuk PPN?", "a": "Ya. Seluruh harga yang tertera di website sudah mencakup PPN 11%. Tidak ada biaya tambahan yang tersembunyi." },
+    { "q": "Bisakah saya memesan produk dari merek yang berbeda dalam satu transaksi?", "a": "Ya. Anda dapat memesan produk EDL dan Lamitak sekaligus dalam satu transaksi. Diskon volume dihitung berdasarkan total keseluruhan lembar." },
+    { "q": "Bagaimana jika produk yang saya inginkan tidak tersedia?", "a": "Hubungi kami via WhatsApp. Tim kami akan membantu mengecek ketersediaan stok atau memberikan alternatif produk yang sesuai." },
+    { "q": "Apakah tersedia layanan pengiriman ke seluruh Indonesia?", "a": "Ya. Kami melayani pengiriman ke seluruh Indonesia melalui berbagai mitra ekspedisi terpercaya. Estimasi tiba bervariasi tergantung lokasi tujuan." },
+    { "q": "Apa yang dimaksud dengan peti kayu pada pengiriman?", "a": "Untuk pengiriman ke luar Jabodetabek, produk HPL dikemas menggunakan peti kayu pelindung guna memastikan produk tiba dalam kondisi sempurna. Biaya peti sudah termasuk dalam ongkos kirim." },
+    { "q": "Apakah saya bisa membatalkan atau mengubah pesanan?", "a": "Pesanan dapat diubah sebelum dikonfirmasi melalui halaman Konfirmasi Pesanan. Setelah dikonfirmasi, hubungi tim kami segera via WhatsApp sebelum pembayaran diproses." }
+  ],
+  "ctaQuestion": "Masih Ada Pertanyaan?",
+  "ctaBody": "Tim kami siap membantu Anda.",
+  "ctaShop": "Mulai Belanja",
+  "ctaWhatsapp": "Hubungi via WhatsApp"
+}

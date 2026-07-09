@@ -6,15 +6,15 @@ export type DiscountTier = {
   minQty: number;
   maxQty: number | null;
   rate: number;
-  label: string;
+  labelKey: string;
 };
 
 export const VOLUME_TIERS: DiscountTier[] = [
-  { minQty: 0,   maxQty: 9,   rate: 0,    label: 'Tidak ada diskon' },
-  { minQty: 10,  maxQty: 24,  rate: 0.02, label: 'Diskon 2%' },
-  { minQty: 25,  maxQty: 49,  rate: 0.05, label: 'Diskon 5%' },
-  { minQty: 50,  maxQty: 99,  rate: 0.07, label: 'Diskon 7%' },
-  { minQty: 100, maxQty: null, rate: 0.10, label: 'Diskon 10%' },
+  { minQty: 0,   maxQty: 9,   rate: 0,    labelKey: 'none' },
+  { minQty: 10,  maxQty: 24,  rate: 0.02, labelKey: 'tier2' },
+  { minQty: 25,  maxQty: 49,  rate: 0.05, labelKey: 'tier5' },
+  { minQty: 50,  maxQty: 99,  rate: 0.07, labelKey: 'tier7' },
+  { minQty: 100, maxQty: null, rate: 0.10, labelKey: 'tier10' },
 ];
 
 export function getVolumeTier(totalQty: number): DiscountTier {
@@ -43,7 +43,7 @@ export type CouponRule = {
 
 export type Coupon = {
   code: string;
-  description: string;
+  descriptionKey: string;
   rules: CouponRule[];
   active: boolean;
   expiresAt: string | null; // ISO date string e.g. '2025-12-31' or null = no expiry
@@ -51,6 +51,7 @@ export type Coupon = {
 
 // ─────────────────────────────────────────────
 //  COUPON CONFIG — edit this to add/remove codes
+//  descriptionKey maps to messages/<locale>/discount.json → coupons.<key>
 // ─────────────────────────────────────────────
 export const COUPONS: Coupon[] = [
   // ── Loyalty Tiers ──────────────────────────
@@ -59,28 +60,28 @@ export const COUPONS: Coupon[] = [
   // If volume discount is higher on a given order, that wins instead.
   {
     code: 'TPLBRONZE',
-    description: 'Bronze Member — diskon 2% semua produk',
+    descriptionKey: 'bronze',
     rules: [{ brand: '*', rate: 0.02 }],
     active: true,
     expiresAt: null,
   },
   {
     code: 'TPLSILVER',
-    description: 'Silver Member — diskon 5% semua produk',
+    descriptionKey: 'silver',
     rules: [{ brand: '*', rate: 0.05 }],
     active: true,
     expiresAt: null,
   },
   {
     code: 'TPLGOLD',
-    description: 'Gold Member — diskon 7% semua produk',
+    descriptionKey: 'gold',
     rules: [{ brand: '*', rate: 0.07 }],
     active: true,
     expiresAt: null,
   },
   {
     code: 'TPLplatinum',
-    description: 'Platinum Member — diskon 10% semua produk',
+    descriptionKey: 'platinum',
     rules: [{ brand: '*', rate: 0.10 }],
     active: true,
     expiresAt: null,
@@ -88,14 +89,14 @@ export const COUPONS: Coupon[] = [
   // ── Promotional ────────────────────────────
   {
     code: 'WELCOME10',
-    description: '10% off semua produk',
+    descriptionKey: 'welcome10',
     rules: [{ brand: '*', rate: 0.10 }],
     active: true,
     expiresAt: '2026-12-31',
   },
   {
     code: 'EDL5',
-    description: '5% off EDL HPL',
+    descriptionKey: 'edl5',
     rules: [
       { brand: 'EDL', rate: 0.05 },
       { brand: 'LAMITAK', rate: 0 },
@@ -105,7 +106,7 @@ export const COUPONS: Coupon[] = [
   },
   {
     code: 'LAMITAK10',
-    description: '10% off Lamitak',
+    descriptionKey: 'lamitak10',
     rules: [
       { brand: 'LAMITAK', rate: 0.10 },
       { brand: 'EDL', rate: 0 },
@@ -118,20 +119,22 @@ export const COUPONS: Coupon[] = [
 // ─────────────────────────────────────────────
 //  Coupon lookup & validation
 // ─────────────────────────────────────────────
+export type CouponErrorCode = 'NOT_FOUND' | 'INACTIVE' | 'EXPIRED';
+
 export type CouponValidation =
   | { valid: true;  coupon: Coupon }
-  | { valid: false; error: string };
+  | { valid: false; errorCode: CouponErrorCode };
 
 export function validateCoupon(code: string): CouponValidation {
   const coupon = COUPONS.find(
     (c) => c.code.toUpperCase() === code.trim().toUpperCase()
   );
-  if (!coupon) return { valid: false, error: 'Kode kupon tidak ditemukan' };
-  if (!coupon.active) return { valid: false, error: 'Kupon sudah tidak aktif' };
+  if (!coupon) return { valid: false, errorCode: 'NOT_FOUND' };
+  if (!coupon.active) return { valid: false, errorCode: 'INACTIVE' };
   if (coupon.expiresAt) {
     const expiry = new Date(coupon.expiresAt);
     expiry.setHours(23, 59, 59);
-    if (new Date() > expiry) return { valid: false, error: 'Kupon sudah kadaluarsa' };
+    if (new Date() > expiry) return { valid: false, errorCode: 'EXPIRED' };
   }
   return { valid: true, coupon };
 }

@@ -6,26 +6,27 @@ export type ShippingRegion = 'jawa-bali' | 'luar-jawa';
 
 export type ShippingZone = {
   region: ShippingRegion;
-  label: string;
+  labelKey: string;
   freeThreshold: number;   // grand total >= this → free shipping
   flatRate: number;        // otherwise this flat fee
-  estimasi: string;        // delivery estimate text
+  estimasiKey: string;     // delivery estimate text key
 };
 
+// labelKey/estimasiKey map to messages/<locale>/shippingZones.json
 export const SHIPPING_ZONES: Record<ShippingRegion, ShippingZone> = {
   'jawa-bali': {
     region: 'jawa-bali',
-    label: 'Jawa & Bali',
+    labelKey: 'jawaBali',
     freeThreshold: 10_000_000,
     flatRate: 100_000,
-    estimasi: 'Tergantung lokasi tujuan',
+    estimasiKey: 'default',
   },
   'luar-jawa': {
     region: 'luar-jawa',
-    label: 'Luar Jawa & Bali',
+    labelKey: 'luarJawa',
     freeThreshold: 25_000_000,
     flatRate: 250_000,
-    estimasi: 'Tergantung lokasi tujuan',
+    estimasiKey: 'default',
   },
 };
 
@@ -98,10 +99,9 @@ export function calculateShipping(province: string, grandTotal: number): number 
   return grandTotal >= zone.freeThreshold ? 0 : zone.flatRate;
 }
 
-export function getDeliveryEstimate(province: string): string {
+export function getDeliveryEstimateKey(province: string): string | null {
   const zone = getShippingZone(province);
-  if (!zone) return '';
-  return zone.estimasi;
+  return zone ? zone.estimasiKey : null;
 }
 
 // ── Crating & chargeable weight (for cartStore compatibility) ─────────────────

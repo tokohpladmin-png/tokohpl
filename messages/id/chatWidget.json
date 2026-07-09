@@ -1,0 +1,18 @@
+{
+  "assistantName": "Asisten TokoHPL",
+  "assistantSubtitle": "Tanya soal produk, harga, & pemesanan",
+  "greeting": "Halo! Saya asisten TokoHPL. Saya bisa membantu Anda menemukan HPL yang tepat, membandingkan produk, atau menjawab pertanyaan tentang pemesanan. Ada yang bisa saya bantu?",
+  "suggested": [
+    "Rekomendasi HPL motif kayu untuk dapur",
+    "Ada produk promo apa sekarang?",
+    "Bagaimana cara pesan dan bayar?",
+    "HPL terlaris dari EDL?"
+  ],
+  "commonQuestionsLabel": "Pertanyaan umum:",
+  "viewProduct": "Lihat produk →",
+  "inputPlaceholder": "Ketik pertanyaan Anda...",
+  "errorFallback": "Maaf, terjadi gangguan. Silakan hubungi kami via WhatsApp 0811 945 224.",
+  "poweredByNote": "Powered by AI · Respons mungkin tidak selalu akurat",
+  "chatWhatsapp": "Chat WhatsApp →",
+  "toggleAria": "Buka asisten AI"
+}

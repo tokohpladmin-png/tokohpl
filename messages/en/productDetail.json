@@ -1,0 +1,33 @@
+{
+  "breadcrumbHome": "Home",
+  "breadcrumbProducts": "Products",
+  "promoBadge": "5% Off",
+  "priceIncludesVat": "Price includes VAT",
+  "qtyLabel": "Quantity",
+  "addToCart": "Add to Cart",
+  "buyNow": "Buy Now",
+  "askWhatsapp": "Ask via WhatsApp",
+  "shippingNote": "Delivered nationwide across Indonesia. Estimated arrival depends on your destination.",
+  "colorDisclaimer": "Actual product color may vary slightly from the image shown due to individual screen settings.",
+  "specsHeading": "Product Specifications",
+  "specs": {
+    "code": "Code",
+    "design": "Design",
+    "brand": "Brand",
+    "collection": "Collection",
+    "size": "Size",
+    "thickness": "Thickness"
+  },
+  "meta": {
+    "descFrom": "{name} ({code}) by {brand} HPL.",
+    "descSize": "Size {size}.",
+    "descThickness": "Thickness {thickness}.",
+    "descCollection": "Collection {collection}.",
+    "descClosing": "Buy online at the best price from TokoHPL. Nationwide delivery across Indonesia.",
+    "keywordBuy": "buy {brand} HPL",
+    "keywordPrice": "{code} price",
+    "keywordDesignHpl": "{name} HPL",
+    "keywordBuyOnline": "buy HPL online",
+    "keywordIndonesia": "HPL Indonesia"
+  }
+}

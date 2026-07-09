@@ -1,0 +1,21 @@
+{
+  "metaTitle": "Shipping Info",
+  "eyebrow": "Information",
+  "heading": "Shipping Info",
+  "provincesJawaBali": "DKI Jakarta, Banten, West Java, Central Java, DI Yogyakarta, East Java, Bali",
+  "provincesLuarJawa": "Sumatra, Kalimantan, Sulawesi, Nusa Tenggara, Maluku, Papua",
+  "shippingCostLabel": "Shipping Cost",
+  "shippingCostValue": "≥ {amount}",
+  "shippingCostNote": "Total after discount",
+  "belowThresholdLabel": "Below Threshold",
+  "belowThresholdNote": "Flat rate per shipment",
+  "estimateLabel": "Estimated Delivery",
+  "importantNotesLabel": "Important Notes",
+  "notes": [
+    "Shipping cost is calculated based on weight and destination.",
+    "Delivery estimates are in business days and exclude national holidays.",
+    "Remote areas in Papua and Maluku may experience longer delivery times.",
+    "Products are securely packaged to prevent damage during shipping.",
+    "Order confirmation is sent via WhatsApp within 24 hours."
+  ]
+}

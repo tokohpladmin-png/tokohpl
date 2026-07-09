@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "eyebrow": "Indonesia's Trusted HPL Distributor",
+    "heading": "Premium HPL Laminate, Now Just a Few Clicks Away",
+    "body": "Explore thousands of quality HPL designs from EDL and Lamitak. Nationwide delivery at competitive prices, backed by service that puts you first.",
+    "ctaAll": "Browse All Products",
+    "ctaEdl": "EDL HPL",
+    "ctaLamitak": "Lamitak HPL",
+    "quickSearchLabel": "Quick Search",
+    "quickSearchTitle": "Find a Product Code",
+    "searchPlaceholder": "e.g. DA 2081N, WY 5216D…",
+    "searchAria": "Search products",
+    "searchSubmitAria": "Search",
+    "productsAvailable": "products available",
+    "strip": ["Official EDL HPL Distributor", "Official Lamitak HPL Distributor", "Nationwide Delivery", "Competitive Pricing"]
+  },
+  "brands": {
+    "edlName": "EDL HPL",
+    "edlBody": "A premium HPL brand from Singapore, offering a full range of designs built on the latest innovation and technology. EDL features over 500 designs — wood grain, solid, pattern, marble, stone, and metal — to bring your interior vision to life.",
+    "edlCta": "Explore EDL Collection →",
+    "lamitakName": "Lamitak HPL",
+    "lamitakBody": "A premium HPL brand from Singapore, present since 2001 under the tagline \"Inspiring Spaces.\" Lamitak is known for exclusive designs, authentic natural finishes, and a commitment to environmentally responsible materials — widely used in hotel, apartment, and premium office projects across Indonesia.",
+    "lamitakCta": "Explore Lamitak Collection →"
+  },
+  "promo": { "eyebrow": "Limited-Time Offers", "heading": "Promo Products", "viewAll": "View All →" },
+  "bestSellers": { "eyebrow": "Editor's Picks", "heading": "Best Sellers", "viewAll": "View All →" },
+  "why": {
+    "eyebrow": "Why Choose Us",
+    "headingLine1": "Why Shop",
+    "headingLine2": "at TokoHPL?",
+    "body": "We supply high-quality HPL laminate at competitive prices, with fast delivery and professional service.",
+    "items": [
+      { "title": "Transparent Pricing", "body": "The prices listed on this site are our official rates. You'll also get volume discounts and reduced shipping costs on qualifying orders." },
+      { "title": "Reliable Delivery", "body": "Nationwide delivery across Indonesia through trusted logistics partners at competitive rates." },
+      { "title": "Authentic Products", "body": "As an official EDL and Lamitak distributor, we guarantee the authenticity and quality of every product you receive." }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Customer Testimonials",
+    "heading": "Trusted by Professionals",
+    "items": [
+      { "name": "Budi Santoso", "role": "Interior Designer", "city": "Jakarta", "text": "Ordering was quick and effortless, and the HPL I received matched the spec exactly. A real time-saver for my clients' interior projects.", "rating": 5 },
+      { "name": "Rina Kusuma", "role": "Contractor", "city": "Surabaya", "text": "I've ordered from TokoHPL several times now. Pricing is transparent with no hidden fees, and delivery to Surabaya has always been on time. I'll keep coming back.", "rating": 5 },
+      { "name": "Hendri Wijaya", "role": "Furniture Maker", "city": "Bandung", "text": "Their EDL and Lamitak range is incredibly complete — I can always find the exact design I'm after. The volume discounts make a real difference on large orders too.", "rating": 5 },
+      { "name": "Sari Dewi", "role": "Architect", "city": "Bali", "text": "My first time ordering HPL online, and it was a great experience. The team was quick to respond on WhatsApp, and the products were high quality with guaranteed authenticity.", "rating": 5 },
+      { "name": "Agus Pramono", "role": "Project Buyer", "city": "Semarang", "text": "We sourced materials for a hotel project — a large order that went smoothly, with a solid volume discount on top. Thank you, TokoHPL!", "rating": 5 }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Get Started",
+    "headingLine1": "Thousands of HPL Designs",
+    "headingLine2": "Ready to Ship",
+    "body": "Find the perfect HPL for your project, delivered nationwide across Indonesia.",
+    "button": "Start Shopping Now"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "announcement": "Distributor Resmi EDL HPL & Lamitak HPL · Pengiriman ke Seluruh Indonesia",
+  "logoAria": "TokoHPL",
+  "home": "Beranda",
+  "products": "Produk",
+  "about": "Tentang Kami",
+  "contact": "Kontak",
+  "allProducts": "Semua Produk",
+  "allProductsArrow": "Semua Produk →",
+  "collections": {
+    "wood": "Wood",
+    "solid": "Solid",
+    "pattern": "Pattern",
+    "marble": "Marble",
+    "stone": "Stone",
+    "metal": "Metal",
+    "aptico": "Aptico",
+    "woods": "Woods",
+    "solids": "Solids",
+    "patterns": "Patterns"
+  },
+  "searchPlaceholder": "Cari kode atau nama produk…",
+  "searchAria": "Cari produk",
+  "searchSubmitAria": "Cari",
+  "cartAria": "Keranjang ({count} item)",
+  "toggleMenuAria": "Buka/tutup menu",
+  "language": "Bahasa"
+}

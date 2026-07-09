@@ -1,0 +1,18 @@
+{
+  "assistantName": "TokoHPL Assistant",
+  "assistantSubtitle": "Ask about products, pricing & ordering",
+  "greeting": "Hi! I'm the TokoHPL assistant. I can help you find the right HPL, compare products, or answer questions about ordering. How can I help?",
+  "suggested": [
+    "Recommend wood-grain HPL for a kitchen",
+    "What promo products are available right now?",
+    "How does ordering and payment work?",
+    "What's EDL's best-selling HPL?"
+  ],
+  "commonQuestionsLabel": "Common questions:",
+  "viewProduct": "View product →",
+  "inputPlaceholder": "Type your question...",
+  "errorFallback": "Sorry, something went wrong. Please contact us via WhatsApp at 0811 945 224.",
+  "poweredByNote": "Powered by AI · Responses may not always be accurate",
+  "chatWhatsapp": "Chat on WhatsApp →",
+  "toggleAria": "Open AI assistant"
+}

@@ -10,9 +10,23 @@ export function slugify(input: string) {
     .replace(/(^-|-$)+/g, '');
 }
 
-export function formatIDR(value?: number | null) {
-  if (typeof value !== 'number') return 'Harga menyusul';
+// Currency stays Rp/id-ID grouping regardless of site locale — Rupiah
+// formatting convention is universal, not tied to UI language.
+export function formatIDR(value?: number | null): string | null {
+  if (typeof value !== 'number') return null;
   return `Rp ${value.toLocaleString('id-ID')}`;
+}
+
+// Dates switch formatting convention per site locale for a native reading
+// experience (id-ID under /id, en-US under /en); amounts stay in WIB.
+export function formatDate(
+  date: Date | string | number,
+  locale: string,
+  options?: Intl.DateTimeFormatOptions,
+): string {
+  const d = typeof date === 'string' || typeof date === 'number' ? new Date(date) : date;
+  const intlLocale = locale === 'en' ? 'en-US' : 'id-ID';
+  return d.toLocaleString(intlLocale, options);
 }
 
 export function uniq<T>(items: T[]): T[] {

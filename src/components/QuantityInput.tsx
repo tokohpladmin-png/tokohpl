@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   value: number;
@@ -9,14 +10,15 @@ interface Props {
 }
 
 export function QuantityInput({ value, onChange, min = 1, max = 9999 }: Props) {
+  const t = useTranslations('Common.qty');
   const [raw, setRaw] = useState(String(value));
   const [error, setError] = useState('');
 
   const commit = (str: string) => {
     const n = parseInt(str, 10);
-    if (!str || isNaN(n)) { setError('Masukkan angka yang valid'); setRaw(String(value)); return; }
-    if (n < min) { setError(`Minimum ${min}`); setRaw(String(value)); return; }
-    if (n > max) { setError(`Maksimum ${max}`); setRaw(String(max)); onChange(max); return; }
+    if (!str || isNaN(n)) { setError(t('invalid')); setRaw(String(value)); return; }
+    if (n < min) { setError(t('min', { min })); setRaw(String(value)); return; }
+    if (n > max) { setError(t('max', { max })); setRaw(String(max)); onChange(max); return; }
     setError('');
     setRaw(String(n));
     onChange(n);
@@ -44,7 +46,7 @@ export function QuantityInput({ value, onChange, min = 1, max = 9999 }: Props) {
           onClick={decrement}
           disabled={value <= min}
           className="w-10 h-10 flex items-center justify-center text-hpl-ink hover:bg-hpl-100 disabled:opacity-30 transition-colors"
-          aria-label="Kurangi"
+          aria-label={t('decrease')}
         >
           <svg width="10" height="2" viewBox="0 0 10 2" fill="currentColor"><rect width="10" height="2" rx="1"/></svg>
         </button>
@@ -64,7 +66,7 @@ export function QuantityInput({ value, onChange, min = 1, max = 9999 }: Props) {
           onClick={increment}
           disabled={value >= max}
           className="w-10 h-10 flex items-center justify-center text-hpl-ink hover:bg-hpl-100 disabled:opacity-30 transition-colors"
-          aria-label="Tambah"
+          aria-label={t('increase')}
         >
           <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
             <rect x="4" width="2" height="10" rx="1"/><rect y="4" width="10" height="2" rx="1"/>

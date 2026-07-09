@@ -1,0 +1,28 @@
+{
+  "announcement": "Official EDL & Lamitak HPL Distributor · Nationwide Delivery Across Indonesia",
+  "logoAria": "TokoHPL",
+  "home": "Home",
+  "products": "Products",
+  "about": "About Us",
+  "contact": "Contact",
+  "allProducts": "All Products",
+  "allProductsArrow": "All Products →",
+  "collections": {
+    "wood": "Wood",
+    "solid": "Solid",
+    "pattern": "Pattern",
+    "marble": "Marble",
+    "stone": "Stone",
+    "metal": "Metal",
+    "aptico": "Aptico",
+    "woods": "Woods",
+    "solids": "Solids",
+    "patterns": "Patterns"
+  },
+  "searchPlaceholder": "Search by product code or name…",
+  "searchAria": "Search products",
+  "searchSubmitAria": "Search",
+  "cartAria": "Cart ({count} items)",
+  "toggleMenuAria": "Toggle menu",
+  "language": "Language"
+}

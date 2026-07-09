@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "titleDefault": "TokoHPL — Buy HPL Laminate Online | EDL & Lamitak Distributor",
+    "titleTemplate": "%s | TokoHPL",
+    "description": "Shop HPL laminate sheets online at competitive prices. Official distributor of EDL and Lamitak HPL in Indonesia, with 1,748 wood grain, solid, and pattern designs in stock. Nationwide delivery.",
+    "keywords": [
+      "buy HPL online", "HPL laminate price", "affordable HPL", "quality HPL laminate",
+      "EDL HPL", "Lamitak HPL", "HPL distributor Indonesia",
+      "HPL for interiors", "HPL for furniture", "HPL Jakarta", "online HPL store",
+      "High Pressure Laminate", "wood grain HPL", "solid color HPL", "patterned HPL"
+    ],
+    "ogTitle": "TokoHPL — Buy HPL Laminate Online | EDL & Lamitak Distributor",
+    "ogDescription": "Shop HPL laminate online at the best prices. Official EDL and Lamitak distributor with 1,748 products in stock and nationwide delivery across Indonesia.",
+    "ogImageAlt": "TokoHPL — Buy HPL Laminate Online",
+    "twitterTitle": "TokoHPL — Buy HPL Laminate Online | EDL & Lamitak Distributor",
+    "twitterDescription": "Official EDL and Lamitak HPL distributor. 1,748 products in stock, nationwide delivery across Indonesia."
+  },
+  "loading": "Loading…",
+  "priceTBD": "Price on request",
+  "includesVat": "VAT included",
+  "close": "Close",
+  "viewAll": "View All",
+  "cancel": "Cancel",
+  "save": "Save",
+  "back": "Back",
+  "qty": {
+    "invalid": "Enter a valid number",
+    "min": "Minimum {min}",
+    "max": "Maximum {max}",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity"
+  },
+  "perSheet": "/ sheet"
+}

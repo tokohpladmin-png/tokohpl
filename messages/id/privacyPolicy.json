@@ -1,0 +1,55 @@
+{
+  "metaTitle": "Kebijakan Privasi — TokoHPL",
+  "metaDescription": "Kebijakan privasi dan perlindungan data pelanggan TokoHPL.",
+  "eyebrow": "Legal",
+  "heading": "Kebijakan Privasi",
+  "effectiveDate": "Berlaku sejak 1 Januari 2025",
+  "intro": "TokoHPL (<strong>tokohpl.com</strong>), yang dioperasikan oleh CV. Varindo Forma Hutama, berkomitmen untuk melindungi privasi dan data pribadi setiap pelanggan. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan menjaga informasi yang Anda berikan kepada kami.",
+  "sections": {
+    "collect": {
+      "title": "1. Informasi yang Kami Kumpulkan",
+      "intro": "Ketika Anda melakukan pemesanan di tokohpl.com, kami mengumpulkan informasi berikut:",
+      "items": ["Nama lengkap", "Nomor telepon / WhatsApp", "Alamat email", "Alamat pengiriman (provinsi, kota, alamat lengkap, kode pos)", "Catatan pengiriman yang Anda berikan secara sukarela"],
+      "outro": "Kami tidak mengumpulkan informasi pembayaran seperti nomor kartu kredit atau rekening bank Anda. Pembayaran dilakukan melalui transfer bank langsung."
+    },
+    "use": {
+      "title": "2. Penggunaan Informasi",
+      "intro": "Informasi yang Anda berikan digunakan semata-mata untuk:",
+      "items": ["Memproses dan mengkonfirmasi pesanan Anda", "Mengatur pengiriman produk ke alamat yang ditentukan", "Menghubungi Anda melalui WhatsApp atau email terkait status pesanan", "Memberikan layanan pelanggan yang lebih baik"],
+      "outro": "Kami <strong>tidak</strong> menggunakan data Anda untuk keperluan pemasaran pihak ketiga atau menjual data Anda kepada pihak lain."
+    },
+    "storage": {
+      "title": "3. Penyimpanan Data",
+      "body": "Data pesanan disimpan secara lokal di perangkat Anda melalui penyimpanan browser (localStorage) dan di sistem internal kami untuk keperluan pencatatan transaksi. Data tersebut tidak disimpan di server pihak ketiga tanpa sepengetahuan Anda."
+    },
+    "sharing": {
+      "title": "4. Berbagi Informasi dengan Pihak Ketiga",
+      "intro": "Kami hanya berbagi informasi yang diperlukan dengan:",
+      "items": ["Mitra logistik pengiriman, semata-mata untuk memproses pengiriman pesanan Anda", "Pihak berwenang apabila diwajibkan oleh hukum yang berlaku di Indonesia"]
+    },
+    "security": {
+      "title": "5. Keamanan Data",
+      "body": "Kami mengambil langkah-langkah yang wajar untuk melindungi informasi pribadi Anda dari akses yang tidak sah, pengungkapan, atau penyalahgunaan. Komunikasi melalui WhatsApp dilindungi oleh enkripsi end-to-end."
+    },
+    "rights": {
+      "title": "6. Hak Anda",
+      "intro": "Anda memiliki hak untuk:",
+      "items": ["Meminta akses terhadap data pribadi yang kami simpan tentang Anda", "Meminta koreksi data yang tidak akurat", "Meminta penghapusan data pribadi Anda dari sistem kami"],
+      "outro": "Untuk mengajukan permintaan tersebut, silakan hubungi kami melalui email di <email>tokohpl.admin@gmail.com</email>."
+    },
+    "cookies": {
+      "title": "7. Cookie dan Penyimpanan Lokal",
+      "body": "Website ini menggunakan penyimpanan lokal browser (localStorage) untuk menyimpan data keranjang belanja dan preferensi Anda selama sesi berbelanja. Data ini tersimpan di perangkat Anda dan dapat dihapus kapan saja melalui pengaturan browser."
+    },
+    "changes": {
+      "title": "8. Perubahan Kebijakan",
+      "body": "Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan yang signifikan akan diberitahukan melalui halaman ini dengan memperbarui tanggal berlaku. Penggunaan layanan kami setelah perubahan tersebut berarti Anda menyetujui kebijakan yang diperbarui."
+    },
+    "contact": {
+      "title": "9. Hubungi Kami",
+      "intro": "Jika Anda memiliki pertanyaan mengenai Kebijakan Privasi ini, silakan hubungi kami:",
+      "emailLabel": "Email",
+      "whatsappLabel": "WhatsApp"
+    }
+  }
+}

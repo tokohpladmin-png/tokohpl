@@ -1,10 +1,12 @@
 'use client';
-import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { Link, useRouter, usePathname } from '@/i18n/navigation';
 import { FormEvent, useState, useEffect } from 'react';
 import { useCartStore } from '@/store/cartStore';
+import { LocaleSwitcher } from './LocaleSwitcher';
 
 function HeaderSearch({ onSearch }: { onSearch?: () => void }) {
+  const t = useTranslations('Nav');
   const router = useRouter();
   const [search, setSearch] = useState('');
 
@@ -20,13 +22,13 @@ function HeaderSearch({ onSearch }: { onSearch?: () => void }) {
       <input
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        placeholder="Cari kode atau nama produk…"
-        aria-label="Cari produk"
+        placeholder={t('searchPlaceholder')}
+        aria-label={t('searchAria')}
         className="h-10 w-full border border-hpl-line bg-hpl-50 px-4 pr-12 text-[13px] text-hpl-ink outline-none transition-all duration-150 placeholder:text-hpl-400 focus:border-hpl-ink focus:bg-white"
       />
       <button
         type="submit"
-        aria-label="Cari"
+        aria-label={t('searchSubmitAria')}
         className="absolute right-0 top-0 flex h-10 w-11 items-center justify-center bg-hpl-ink text-white transition hover:bg-hpl-800"
       >
         <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
@@ -39,6 +41,7 @@ function HeaderSearch({ onSearch }: { onSearch?: () => void }) {
 }
 
 function CartIcon() {
+  const t = useTranslations('Nav');
   const { totalItems, openDrawer } = useCartStore();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -48,7 +51,7 @@ function CartIcon() {
     <button
       type="button"
       onClick={openDrawer}
-      aria-label={`Keranjang (${count} item)`}
+      aria-label={t('cartAria', { count })}
       className="relative flex items-center justify-center w-10 h-10 hover:opacity-80 transition-opacity"
     >
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-hpl-ink">
@@ -66,6 +69,7 @@ function CartIcon() {
 }
 
 export function Header() {
+  const t = useTranslations('Nav');
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -78,12 +82,38 @@ export function Header() {
 
   useEffect(() => { setIsOpen(false); }, [pathname]);
 
+  const edlCollections: [string, string][] = [
+    [t('collections.wood'), '/products?brand=EDL&collection=Wood'],
+    [t('collections.solid'), '/products?brand=EDL&collection=Solid'],
+    [t('collections.pattern'), '/products?brand=EDL&collection=Pattern'],
+    [t('collections.marble'), '/products?brand=EDL&collection=Marble'],
+    [t('collections.stone'), '/products?brand=EDL&collection=Stone'],
+    [t('collections.metal'), '/products?brand=EDL&collection=Metal'],
+    [t('collections.aptico'), '/products?brand=EDL&collection=Aptico'],
+  ];
+  const lamitakCollections: [string, string][] = [
+    [t('collections.woods'), '/products?brand=LAMITAK&collection=Woods'],
+    [t('collections.solids'), '/products?brand=LAMITAK&collection=Solids'],
+    [t('collections.patterns'), '/products?brand=LAMITAK&collection=Patterns'],
+  ];
+
+  const mobileNavItems = [
+    { href: '/', label: t('home') },
+    { href: '/products', label: t('allProducts') },
+    { href: '/products?brand=EDL', label: 'EDL HPL' },
+    ...edlCollections.map(([label, href]) => ({ href, label: `· ${label}` })),
+    { href: '/products?brand=LAMITAK', label: 'Lamitak HPL' },
+    ...lamitakCollections.map(([label, href]) => ({ href, label: `· ${label}` })),
+    { href: '/about', label: t('about') },
+    { href: '/contact', label: t('contact') },
+  ];
+
   return (
     <>
       {/* Announcement */}
       <div className="bg-hpl-ink text-white text-center py-2 px-4">
         <p className="text-[10px] tracking-[0.22em] uppercase font-medium text-hpl-200">
-          Distributor Resmi EDL HPL & Lamitak HPL · Pengiriman ke Seluruh Indonesia
+          {t('announcement')}
         </p>
       </div>
 
@@ -94,7 +124,7 @@ export function Header() {
           <div className="flex h-[68px] items-center justify-between gap-6">
 
             {/* Logo */}
-            <Link href="/" className="shrink-0 flex items-center gap-2" aria-label="TokoHPL">
+            <Link href="/" className="shrink-0 flex items-center gap-2" aria-label={t('logoAria')}>
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-hpl-ink flex items-center justify-center shrink-0">
                   <span className="text-white text-[10px] font-bold tracking-widest">HPL</span>
@@ -107,10 +137,10 @@ export function Header() {
 
             {/* Desktop nav */}
             <nav className="hidden lg:flex items-center gap-8 text-[11px] font-semibold tracking-[0.16em] uppercase text-hpl-700">
-              <Link href="/" className="hover:text-hpl-ink transition-colors">Beranda</Link>
+              <Link href="/" className="hover:text-hpl-ink transition-colors">{t('home')}</Link>
               <div className="group relative py-6">
                 <button className="flex items-center gap-1 hover:text-hpl-ink transition-colors cursor-pointer">
-                  Produk
+                  {t('products')}
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="translate-y-px">
                     <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -123,15 +153,7 @@ export function Header() {
                           className="block text-[10px] font-bold tracking-[0.14em] uppercase text-hpl-ink pb-2 mb-2 border-b border-hpl-line hover:text-hpl-accent transition-colors">
                           EDL HPL
                         </Link>
-                        {[
-                          ['Wood',    '/products?brand=EDL&collection=Wood'],
-                          ['Solid',   '/products?brand=EDL&collection=Solid'],
-                          ['Pattern', '/products?brand=EDL&collection=Pattern'],
-                          ['Marble',  '/products?brand=EDL&collection=Marble'],
-                          ['Stone',   '/products?brand=EDL&collection=Stone'],
-                          ['Metal',   '/products?brand=EDL&collection=Metal'],
-                          ['Aptico',  '/products?brand=EDL&collection=Aptico'],
-                        ].map(([label, href]) => (
+                        {edlCollections.map(([label, href]) => (
                           <Link key={href} href={href}
                             className="block py-1.5 text-[12px] text-hpl-600 hover:text-hpl-ink transition-colors">
                             {label}
@@ -143,11 +165,7 @@ export function Header() {
                           className="block text-[10px] font-bold tracking-[0.14em] uppercase text-hpl-ink pb-2 mb-2 border-b border-hpl-line hover:text-hpl-accent transition-colors">
                           Lamitak HPL
                         </Link>
-                        {[
-                          ['Woods',    '/products?brand=LAMITAK&collection=Woods'],
-                          ['Solids',   '/products?brand=LAMITAK&collection=Solids'],
-                          ['Patterns', '/products?brand=LAMITAK&collection=Patterns'],
-                        ].map(([label, href]) => (
+                        {lamitakCollections.map(([label, href]) => (
                           <Link key={href} href={href}
                             className="block py-1.5 text-[12px] text-hpl-600 hover:text-hpl-ink transition-colors">
                             {label}
@@ -158,13 +176,13 @@ export function Header() {
                     <div className="rule mt-4 mb-3"/>
                     <Link href="/products"
                       className="text-[11px] font-semibold tracking-[0.14em] uppercase text-hpl-ink hover:text-hpl-accent transition-colors">
-                      Semua Produk →
+                      {t('allProductsArrow')}
                     </Link>
                   </div>
                 </div>
               </div>
-              <Link href="/about" className="hover:text-hpl-ink transition-colors">Tentang Kami</Link>
-              <Link href="/contact" className="hover:text-hpl-ink transition-colors">Kontak</Link>
+              <Link href="/about" className="hover:text-hpl-ink transition-colors">{t('about')}</Link>
+              <Link href="/contact" className="hover:text-hpl-ink transition-colors">{t('contact')}</Link>
             </nav>
 
             {/* Search */}
@@ -174,10 +192,11 @@ export function Header() {
 
             {/* Right */}
             <div className="flex items-center gap-3 shrink-0">
+              <LocaleSwitcher className="hidden sm:flex" />
               <CartIcon />
 
               {/* Mobile hamburger */}
-              <button type="button" aria-label="Toggle menu" aria-expanded={isOpen}
+              <button type="button" aria-label={t('toggleMenuAria')} aria-expanded={isOpen}
                 onClick={() => setIsOpen((v) => !v)}
                 className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] shrink-0">
                 <span className={`block h-[1.5px] w-6 bg-hpl-ink transition-all duration-200 ${isOpen ? 'translate-y-[6.5px] rotate-45' : ''}`}/>
@@ -198,31 +217,17 @@ export function Header() {
             </div>
             <div className="rule"/>
             <nav className="shell py-4">
-              {[
-                { href: '/', label: 'Beranda' },
-                { href: '/products', label: 'Semua Produk' },
-                { href: '/products?brand=EDL', label: 'EDL HPL' },
-                { href: '/products?brand=EDL&collection=Wood', label: '· Wood' },
-                { href: '/products?brand=EDL&collection=Solid', label: '· Solid' },
-                { href: '/products?brand=EDL&collection=Pattern', label: '· Pattern' },
-                { href: '/products?brand=EDL&collection=Marble', label: '· Marble' },
-                { href: '/products?brand=EDL&collection=Stone', label: '· Stone' },
-                { href: '/products?brand=EDL&collection=Metal', label: '· Metal' },
-                { href: '/products?brand=EDL&collection=Aptico', label: '· Aptico' },
-                { href: '/products?brand=LAMITAK', label: 'Lamitak HPL' },
-                { href: '/products?brand=LAMITAK&collection=Woods', label: '· Woods' },
-                { href: '/products?brand=LAMITAK&collection=Solids', label: '· Solids' },
-                { href: '/products?brand=LAMITAK&collection=Patterns', label: '· Patterns' },
-                { href: '/about', label: 'Tentang Kami' },
-                { href: '/contact', label: 'Kontak' },
-              ].map((item) => (
+              {mobileNavItems.map((item) => (
                 <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}
                   className="block py-3 text-[11px] font-semibold tracking-[0.18em] uppercase text-hpl-700 hover:text-hpl-ink transition-colors border-b border-hpl-line/50 last:border-0">
                   {item.label}
                 </Link>
               ))}
             </nav>
-
+            <div className="rule"/>
+            <div className="shell py-4">
+              <LocaleSwitcher />
+            </div>
           </div>
         )}
       </header>
