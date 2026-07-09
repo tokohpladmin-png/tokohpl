@@ -6,13 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/*/checkout',
-          '/*/order-confirmation',
-          '/*/order-success',
-          '/*/cart',
-          '/api/',
-        ],
+        disallow: ['/api/'],
       },
     ],
     sitemap: 'https://tokohpl.com/sitemap.xml',

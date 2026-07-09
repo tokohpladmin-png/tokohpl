@@ -8,8 +8,6 @@
     "lamitak": "Lamitak HPL",
     "allProducts": "All Products",
     "about": "About Us",
-    "shipping": "Shipping Info",
-    "shoppingGuide": "Shopping Guide",
     "privacyPolicy": "Privacy Policy",
     "contact": "Contact Us"
   },
@@ -18,5 +16,5 @@
   "hours": "Business Hours",
   "hoursValue": "Monday–Friday, 9:00 AM–5:00 PM WIB",
   "copyright": "© {year} TokoHPL. All rights reserved.",
-  "distributor": "Official EDL & Lamitak HPL Distributor"
+  "dealer": "Official EDL & Lamitak HPL Dealer"
 }

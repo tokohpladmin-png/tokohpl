@@ -12,8 +12,6 @@ export async function Footer() {
   ];
   const companyLinks = [
     { href: '/about', label: t('links.about') },
-    { href: '/shipping', label: t('links.shipping') },
-    { href: '/panduan-belanja', label: t('links.shoppingGuide') },
     { href: '/kebijakan-privasi', label: t('links.privacyPolicy') },
     { href: '/contact', label: t('links.contact') },
   ];
@@ -89,7 +87,7 @@ export async function Footer() {
       <div className="border-t border-white/[0.07]">
         <div className="shell py-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <p className="text-[11px] text-hpl-600">{t('copyright', { year })}</p>
-          <p className="text-[11px] text-hpl-700">{t('distributor')}</p>
+          <p className="text-[11px] text-hpl-700">{t('dealer')}</p>
         </div>
       </div>
     </footer>

@@ -64,9 +64,7 @@ export function ProductExplorer({ products, filterOptions }: Props) {
   useEffect(() => { setPage(1); }, [query, brand, collection, size]);
 
   const filtered = useMemo(() => {
-    const promoOnly = searchParams.get('promo') === 'true';
     let result = searchProducts(products, query);
-    if (promoOnly) result = result.filter((p) => p.isPromo);
     if (brand) result = result.filter((p) => p.brand === brand.toUpperCase());
     if (collection) result = result.filter((p) => p.collection === collection);
     if (size) result = result.filter((p) => p.size === size);

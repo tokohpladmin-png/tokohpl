@@ -51,7 +51,6 @@ export function parseProductsFromCsv(csvText: string): Product[] {
     const thickness   = col(values, 'thickness');
     const isNew       = col(values, 'new_arrivals').toLowerCase() === 'true';
     const isBest      = col(values, 'best_sellers').toLowerCase() === 'true';
-    const isPromo     = col(values, 'promo_items').toLowerCase() === 'true';
 
     if (status !== 'active') continue;
 
@@ -120,7 +119,6 @@ export function parseProductsFromCsv(csvText: string): Product[] {
       active: true,
       isNew,
       isBestSeller: isBest,
-      isPromo,
       imageUrl,
     };
 

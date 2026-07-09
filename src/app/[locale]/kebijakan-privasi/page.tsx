@@ -8,23 +8,6 @@ export async function generateMetadata() {
   };
 }
 
-function ListSection({ intro, items, outro }: { intro: string; items: string[]; outro?: React.ReactNode }) {
-  return (
-    <div className="space-y-3 text-[13px] leading-7 text-hpl-600">
-      <p>{intro}</p>
-      <ul className="space-y-2">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2">
-            <div className="w-1 h-1 rounded-full bg-hpl-accent mt-2.5 shrink-0"/>
-            {item}
-          </li>
-        ))}
-      </ul>
-      {outro && <p>{outro}</p>}
-    </div>
-  );
-}
-
 export default async function KebijakanPrivasiPage() {
   const t = await getTranslations('PrivacyPolicy');
   const strong = (chunks: React.ReactNode) => <strong className="text-hpl-ink">{chunks}</strong>;
@@ -32,10 +15,7 @@ export default async function KebijakanPrivasiPage() {
     <a href="mailto:tokohpl.admin@gmail.com" className="text-hpl-accent hover:underline">{chunks}</a>
   );
 
-  const collectItems = t.raw('sections.collect.items') as string[];
-  const useItems = t.raw('sections.use.items') as string[];
-  const sharingItems = t.raw('sections.sharing.items') as string[];
-  const rightsItems = t.raw('sections.rights.items') as string[];
+  const sectionKeys = ['collect', 'use', 'storage', 'sharing', 'security', 'rights', 'cookies', 'changes'] as const;
 
   return (
     <div>
@@ -58,49 +38,14 @@ export default async function KebijakanPrivasiPage() {
             </p>
           </section>
 
-          <section className="border-t border-hpl-line pt-8">
-            <h2 className="text-[16px] font-semibold tracking-[-0.01em] text-hpl-ink mb-4">{t('sections.collect.title')}</h2>
-            <ListSection intro={t('sections.collect.intro')} items={collectItems} outro={t('sections.collect.outro')} />
-          </section>
-
-          <section className="border-t border-hpl-line pt-8">
-            <h2 className="text-[16px] font-semibold tracking-[-0.01em] text-hpl-ink mb-4">{t('sections.use.title')}</h2>
-            <ListSection intro={t('sections.use.intro')} items={useItems} outro={t.rich('sections.use.outro', { strong })} />
-          </section>
-
-          <section className="border-t border-hpl-line pt-8">
-            <h2 className="text-[16px] font-semibold tracking-[-0.01em] text-hpl-ink mb-4">{t('sections.storage.title')}</h2>
-            <p className="text-[13px] leading-7 text-hpl-600">{t('sections.storage.body')}</p>
-          </section>
-
-          <section className="border-t border-hpl-line pt-8">
-            <h2 className="text-[16px] font-semibold tracking-[-0.01em] text-hpl-ink mb-4">{t('sections.sharing.title')}</h2>
-            <ListSection intro={t('sections.sharing.intro')} items={sharingItems} />
-          </section>
-
-          <section className="border-t border-hpl-line pt-8">
-            <h2 className="text-[16px] font-semibold tracking-[-0.01em] text-hpl-ink mb-4">{t('sections.security.title')}</h2>
-            <p className="text-[13px] leading-7 text-hpl-600">{t('sections.security.body')}</p>
-          </section>
-
-          <section className="border-t border-hpl-line pt-8">
-            <h2 className="text-[16px] font-semibold tracking-[-0.01em] text-hpl-ink mb-4">{t('sections.rights.title')}</h2>
-            <ListSection
-              intro={t('sections.rights.intro')}
-              items={rightsItems}
-              outro={t.rich('sections.rights.outro', { email: emailLink })}
-            />
-          </section>
-
-          <section className="border-t border-hpl-line pt-8">
-            <h2 className="text-[16px] font-semibold tracking-[-0.01em] text-hpl-ink mb-4">{t('sections.cookies.title')}</h2>
-            <p className="text-[13px] leading-7 text-hpl-600">{t('sections.cookies.body')}</p>
-          </section>
-
-          <section className="border-t border-hpl-line pt-8">
-            <h2 className="text-[16px] font-semibold tracking-[-0.01em] text-hpl-ink mb-4">{t('sections.changes.title')}</h2>
-            <p className="text-[13px] leading-7 text-hpl-600">{t('sections.changes.body')}</p>
-          </section>
+          {sectionKeys.map((key) => (
+            <section key={key} className="border-t border-hpl-line pt-8">
+              <h2 className="text-[16px] font-semibold tracking-[-0.01em] text-hpl-ink mb-4">{t(`sections.${key}.title`)}</h2>
+              <p className="text-[13px] leading-7 text-hpl-600">
+                {t.rich(`sections.${key}.body`, { strong, email: emailLink })}
+              </p>
+            </section>
+          ))}
 
           <section className="border-t border-hpl-line pt-8">
             <h2 className="text-[16px] font-semibold tracking-[-0.01em] text-hpl-ink mb-4">{t('sections.contact.title')}</h2>

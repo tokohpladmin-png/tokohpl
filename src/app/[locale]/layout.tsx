@@ -6,7 +6,6 @@ import { notFound } from 'next/navigation';
 import '../globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { CartDrawer } from '@/components/CartDrawer';
 import { ChatWidget } from '@/components/ChatWidget';
 import { routing, type Locale } from '@/i18n/routing';
 
@@ -92,7 +91,6 @@ export default async function LocaleLayout({
       <body className="min-h-screen antialiased">
         <NextIntlClientProvider>
           <Header />
-          <CartDrawer />
           <main>{children}</main>
           <Footer />
           <ChatWidget />

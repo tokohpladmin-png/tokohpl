@@ -5,7 +5,7 @@
   "metaTitle": "Katalog HPL — EDL & Lamitak | 1.748 Pilihan Produk",
   "metaDescription": "Katalog lengkap HPL EDL dan Lamitak. 1.748 pilihan motif kayu, warna solid, batu, dan pola. Filter berdasarkan merek, koleksi, dan ukuran. Harga termasuk PPN.",
   "metaDescriptionShort": "Katalog lengkap HPL EDL dan Lamitak. 1.748 pilihan motif, filter berdasarkan merek, koleksi, dan ukuran.",
-  "metaKeywords": ["katalog HPL", "daftar harga HPL", "HPL EDL lengkap", "HPL Lamitak lengkap", "motif HPL", "warna HPL solid", "HPL kayu", "beli HPL online"],
+  "metaKeywords": ["katalog HPL", "daftar harga HPL", "HPL EDL lengkap", "HPL Lamitak lengkap", "motif HPL", "warna HPL solid", "HPL kayu", "katalog HPL online"],
   "tabs": { "all": "Semua", "edl": "EDL HPL", "lamitak": "Lamitak HPL" },
   "filterLabel": "Filter",
   "clearFilters": "Hapus Filter",
@@ -27,8 +27,5 @@
   "resultsFound": "produk ditemukan",
   "showing": "Menampilkan {from}–{to}",
   "emptyState": "Tidak ada produk ditemukan.",
-  "loadingFallback": "Memuat produk…",
-  "promoBadge": "Promo 5%",
-  "newBadge": "Baru",
-  "addToCartAria": "Tambah {name} ke keranjang"
+  "loadingFallback": "Memuat produk…"
 }

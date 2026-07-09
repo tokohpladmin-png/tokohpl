@@ -1,5 +1,5 @@
 {
-  "announcement": "Official EDL & Lamitak HPL Distributor · Nationwide Delivery Across Indonesia",
+  "announcement": "Official EDL & Lamitak HPL Dealer · Nationwide Delivery Across Indonesia",
   "logoAria": "TokoHPL",
   "home": "Home",
   "products": "Products",
@@ -22,7 +22,6 @@
   "searchPlaceholder": "Search by product code or name…",
   "searchAria": "Search products",
   "searchSubmitAria": "Search",
-  "cartAria": "Cart ({count} items)",
   "toggleMenuAria": "Toggle menu",
   "language": "Language"
 }

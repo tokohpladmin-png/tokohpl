@@ -8,8 +8,6 @@
     "lamitak": "Lamitak HPL",
     "allProducts": "Semua Produk",
     "about": "Tentang Kami",
-    "shipping": "Info Pengiriman",
-    "shoppingGuide": "Panduan Belanja",
     "privacyPolicy": "Kebijakan Privasi",
     "contact": "Hubungi Kami"
   },
@@ -18,5 +16,5 @@
   "hours": "Jam Operasional",
   "hoursValue": "Senin–Jumat, 09.00–17.00 WIB",
   "copyright": "© {year} TokoHPL. Semua hak dilindungi.",
-  "distributor": "Distributor Resmi EDL HPL & Lamitak HPL"
+  "dealer": "Dealer Resmi EDL HPL & Lamitak HPL"
 }

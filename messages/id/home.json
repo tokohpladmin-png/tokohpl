@@ -1,6 +1,6 @@
 {
   "hero": {
-    "eyebrow": "Distributor Resmi HPL Indonesia",
+    "eyebrow": "Dealer Resmi HPL Indonesia",
     "heading": "Kini Anda dapat dengan mudah mendapatkan HPL berkualitas",
     "body": "Temukan ribuan pilihan HPL berkualitas dari EDL dan Lamitak. Pengiriman ke seluruh Indonesia dengan harga kompetitif dan layanan yang berpusat pada pelanggan.",
     "ctaAll": "Lihat Semua Produk",
@@ -12,7 +12,7 @@
     "searchAria": "Cari produk",
     "searchSubmitAria": "Cari",
     "productsAvailable": "produk tersedia",
-    "strip": ["Distributor Resmi EDL HPL", "Distributor Resmi Lamitak HPL", "Pengiriman ke Seluruh Indonesia", "Harga Kompetitif"]
+    "strip": ["Dealer Resmi EDL HPL", "Dealer Resmi Lamitak HPL", "Pengiriman ke Seluruh Indonesia", "Harga Kompetitif"]
   },
   "brands": {
     "edlName": "EDL HPL",
@@ -22,7 +22,6 @@
     "lamitakBody": "Merek HPL premium asal Singapura yang telah hadir sejak 2001 dengan tagline Inspiring Spaces. Lamitak dikenal dengan desain eksklusif, finishing autentik yang tampak natural, dan komitmen pada material ramah lingkungan. Banyak digunakan pada proyek hotel, apartemen, dan kantor premium di Indonesia.",
     "lamitakCta": "Lihat Koleksi Lamitak →"
   },
-  "promo": { "eyebrow": "Penawaran Terbatas", "heading": "Produk Promo", "viewAll": "Lihat Semua →" },
   "bestSellers": { "eyebrow": "Pilihan Editor", "heading": "Paling Laris", "viewAll": "Lihat Semua →" },
   "why": {
     "eyebrow": "Keunggulan Kami",
@@ -30,9 +29,9 @@
     "headingLine2": "di TokoHPL?",
     "body": "Kami menyediakan produk HPL berkualitas tinggi dengan harga kompetitif, pengiriman cepat, dan pelayanan profesional.",
     "items": [
-      { "title": "Harga Transparan", "body": "Harga yang tercantum pada situs ini merupakan harga resmi. Anda juga akan mendapatkan diskon dan potongan ongkos kirim untuk pembelian dalam jumlah tertentu." },
+      { "title": "Harga Transparan", "body": "Harga yang tercantum pada situs ini merupakan harga resmi tanpa biaya tersembunyi." },
       { "title": "Pengiriman Terpercaya", "body": "Pengiriman ke seluruh Indonesia melalui mitra ekspedisi terpercaya dengan tarif kompetitif." },
-      { "title": "Produk Resmi", "body": "Distributor resmi EDL dan Lamitak dengan produk berkualitas yang dijamin keasliannya. Anda akan mendapatkan produk sesuai dengan yang Anda butuhkan." }
+      { "title": "Produk Resmi", "body": "Dealer resmi EDL dan Lamitak dengan produk berkualitas yang dijamin keasliannya. Anda akan mendapatkan produk sesuai dengan yang Anda butuhkan." }
     ]
   },
   "testimonials": {
@@ -41,16 +40,16 @@
     "items": [
       { "name": "Budi Santoso", "role": "Interior Designer", "city": "Jakarta", "text": "Proses pemesanan sangat mudah dan cepat. Produk HPL yang saya terima sesuai dengan spesifikasi yang tertera. Sangat membantu untuk proyek interior klien saya.", "rating": 5 },
       { "name": "Rina Kusuma", "role": "Kontraktor", "city": "Surabaya", "text": "Sudah beberapa kali memesan dari TokoHPL. Harga transparan, tidak ada biaya tersembunyi. Pengiriman ke Surabaya tepat waktu. Pasti akan pesan lagi.", "rating": 5 },
-      { "name": "Hendri Wijaya", "role": "Furniture Maker", "city": "Bandung", "text": "Koleksi EDL dan Lamitak lengkap sekali. Saya sering cari motif tertentu dan selalu ada. Diskon volume juga sangat membantu untuk order dalam jumlah besar.", "rating": 5 },
-      { "name": "Sari Dewi", "role": "Arsitek", "city": "Bali", "text": "Pertama kali mencoba order online HPL dan pengalaman yang menyenangkan. Tim sangat responsif via WhatsApp. Produk berkualitas dan terjamin keasliannya.", "rating": 5 },
-      { "name": "Agus Pramono", "role": "Project Buyer", "city": "Semarang", "text": "Pembelian untuk proyek hotel. Order dalam jumlah besar, proses lancar, dan mendapat diskon volume yang cukup signifikan. Terima kasih TokoHPL!", "rating": 5 }
+      { "name": "Hendri Wijaya", "role": "Furniture Maker", "city": "Bandung", "text": "Koleksi EDL dan Lamitak lengkap sekali. Saya sering cari motif tertentu dan selalu ada, katalognya mudah dijelajahi lewat website.", "rating": 5 },
+      { "name": "Sari Dewi", "role": "Arsitek", "city": "Bali", "text": "Pertama kali mencoba cari HPL lewat katalog online dan pengalaman yang menyenangkan. Tim sangat responsif via WhatsApp. Produk berkualitas dan terjamin keasliannya.", "rating": 5 },
+      { "name": "Agus Pramono", "role": "Project Buyer", "city": "Semarang", "text": "Pembelian untuk proyek hotel. Order dalam jumlah besar untuk proyek hotel, dan prosesnya berjalan lancar. Terima kasih TokoHPL!", "rating": 5 }
     ]
   },
   "cta": {
-    "eyebrow": "Mulai Belanja",
+    "eyebrow": "Jelajahi Katalog",
     "headingLine1": "Ribuan Pilihan HPL",
     "headingLine2": "Siap Dikirim",
     "body": "Temukan HPL yang sesuai kebutuhan Anda. Pengiriman ke seluruh Indonesia.",
-    "button": "Mulai Belanja Sekarang"
+    "button": "Jelajahi Katalog"
   }
 }

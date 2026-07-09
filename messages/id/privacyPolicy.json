@@ -1,49 +1,42 @@
 {
   "metaTitle": "Kebijakan Privasi — TokoHPL",
-  "metaDescription": "Kebijakan privasi dan perlindungan data pelanggan TokoHPL.",
+  "metaDescription": "Kebijakan privasi TokoHPL terkait penggunaan situs dan komunikasi via WhatsApp.",
   "eyebrow": "Legal",
   "heading": "Kebijakan Privasi",
   "effectiveDate": "Berlaku sejak 1 Januari 2025",
-  "intro": "TokoHPL (<strong>tokohpl.com</strong>), yang dioperasikan oleh CV. Varindo Forma Hutama, berkomitmen untuk melindungi privasi dan data pribadi setiap pelanggan. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan menjaga informasi yang Anda berikan kepada kami.",
+  "intro": "TokoHPL (<strong>tokohpl.com</strong>), yang dioperasikan oleh CV. Varindo Forma Hutama, berkomitmen untuk menjaga privasi setiap pengunjung. TokoHPL adalah katalog produk tanpa sistem akun, keranjang belanja, atau checkout, sehingga situs ini tidak mengumpulkan data pribadi Anda secara langsung. Kebijakan ini menjelaskan bagaimana informasi diperlakukan, termasuk saat Anda menghubungi kami melalui WhatsApp.",
   "sections": {
     "collect": {
       "title": "1. Informasi yang Kami Kumpulkan",
-      "intro": "Ketika Anda melakukan pemesanan di tokohpl.com, kami mengumpulkan informasi berikut:",
-      "items": ["Nama lengkap", "Nomor telepon / WhatsApp", "Alamat email", "Alamat pengiriman (provinsi, kota, alamat lengkap, kode pos)", "Catatan pengiriman yang Anda berikan secara sukarela"],
-      "outro": "Kami tidak mengumpulkan informasi pembayaran seperti nomor kartu kredit atau rekening bank Anda. Pembayaran dilakukan melalui transfer bank langsung."
+      "body": "tokohpl.com tidak memiliki formulir, akun, keranjang belanja, atau checkout, sehingga kami tidak mengumpulkan data pribadi Anda melalui situs. Jika Anda memilih menghubungi kami lewat tombol \"Tanya via WhatsApp\", percakapan tersebut berlangsung langsung di aplikasi WhatsApp Anda — informasi apa pun yang Anda bagikan di sana sepenuhnya berada di luar sistem situs ini."
     },
     "use": {
       "title": "2. Penggunaan Informasi",
-      "intro": "Informasi yang Anda berikan digunakan semata-mata untuk:",
-      "items": ["Memproses dan mengkonfirmasi pesanan Anda", "Mengatur pengiriman produk ke alamat yang ditentukan", "Menghubungi Anda melalui WhatsApp atau email terkait status pesanan", "Memberikan layanan pelanggan yang lebih baik"],
-      "outro": "Kami <strong>tidak</strong> menggunakan data Anda untuk keperluan pemasaran pihak ketiga atau menjual data Anda kepada pihak lain."
+      "body": "Informasi yang Anda bagikan melalui percakapan WhatsApp hanya kami gunakan untuk merespons pertanyaan dan membantu proses pemesanan Anda. Kami <strong>tidak</strong> menggunakannya untuk keperluan pemasaran pihak ketiga atau menjual data Anda kepada pihak lain."
     },
     "storage": {
       "title": "3. Penyimpanan Data",
-      "body": "Data pesanan disimpan secara lokal di perangkat Anda melalui penyimpanan browser (localStorage) dan di sistem internal kami untuk keperluan pencatatan transaksi. Data tersebut tidak disimpan di server pihak ketiga tanpa sepengetahuan Anda."
+      "body": "Situs ini tidak menyimpan data pribadi Anda di server kami. Satu-satunya data yang tersimpan di perangkat Anda adalah preferensi bahasa (Indonesia/Inggris) melalui cookie, yang tidak mengandung informasi pribadi."
     },
     "sharing": {
       "title": "4. Berbagi Informasi dengan Pihak Ketiga",
-      "intro": "Kami hanya berbagi informasi yang diperlukan dengan:",
-      "items": ["Mitra logistik pengiriman, semata-mata untuk memproses pengiriman pesanan Anda", "Pihak berwenang apabila diwajibkan oleh hukum yang berlaku di Indonesia"]
+      "body": "Karena situs ini tidak mengumpulkan data pribadi Anda, kami tidak membagikannya kepada pihak ketiga mana pun, kecuali apabila diwajibkan oleh hukum yang berlaku di Indonesia."
     },
     "security": {
       "title": "5. Keamanan Data",
-      "body": "Kami mengambil langkah-langkah yang wajar untuk melindungi informasi pribadi Anda dari akses yang tidak sah, pengungkapan, atau penyalahgunaan. Komunikasi melalui WhatsApp dilindungi oleh enkripsi end-to-end."
+      "body": "Percakapan melalui WhatsApp dilindungi oleh enkripsi end-to-end milik WhatsApp. Kami tidak menyimpan salinan percakapan tersebut di sistem kami."
     },
     "rights": {
       "title": "6. Hak Anda",
-      "intro": "Anda memiliki hak untuk:",
-      "items": ["Meminta akses terhadap data pribadi yang kami simpan tentang Anda", "Meminta koreksi data yang tidak akurat", "Meminta penghapusan data pribadi Anda dari sistem kami"],
-      "outro": "Untuk mengajukan permintaan tersebut, silakan hubungi kami melalui email di <email>tokohpl.admin@gmail.com</email>."
+      "body": "Karena kami tidak menyimpan data pribadi Anda di sistem kami, tidak ada data situs yang perlu diakses, dikoreksi, atau dihapus. Jika Anda memiliki pertanyaan terkait percakapan WhatsApp dengan kami, silakan hubungi kami melalui email di <email>tokohpl.admin@gmail.com</email>."
     },
     "cookies": {
-      "title": "7. Cookie dan Penyimpanan Lokal",
-      "body": "Website ini menggunakan penyimpanan lokal browser (localStorage) untuk menyimpan data keranjang belanja dan preferensi Anda selama sesi berbelanja. Data ini tersimpan di perangkat Anda dan dapat dihapus kapan saja melalui pengaturan browser."
+      "title": "7. Cookie",
+      "body": "Situs ini hanya menggunakan satu cookie fungsional untuk mengingat preferensi bahasa (Indonesia/Inggris) Anda. Cookie ini tidak digunakan untuk pelacakan atau periklanan, dan dapat dihapus kapan saja melalui pengaturan browser."
     },
     "changes": {
       "title": "8. Perubahan Kebijakan",
-      "body": "Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan yang signifikan akan diberitahukan melalui halaman ini dengan memperbarui tanggal berlaku. Penggunaan layanan kami setelah perubahan tersebut berarti Anda menyetujui kebijakan yang diperbarui."
+      "body": "Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan yang signifikan akan diberitahukan melalui halaman ini dengan memperbarui tanggal berlaku."
     },
     "contact": {
       "title": "9. Hubungi Kami",

@@ -15,7 +15,6 @@ export default async function HomePage({
   const t = await getTranslations('Home');
   const [products] = await Promise.all([getPublicProducts(), getFilterOptions()]);
   const featured = products.filter(p => p.isBestSeller).slice(0, 8);
-  const promoProducts = products.filter(p => p.isPromo).slice(0, 8);
   const numberLocale = locale === 'en' ? 'en-US' : 'id-ID';
 
   const edlCollections = ['Wood', 'Solid', 'Pattern', 'Marble', 'Stone', 'Metal', 'Aptico'];
@@ -138,24 +137,6 @@ export default async function HomePage({
           </div>
         </div>
       </section>
-
-      {/* Produk Promo */}
-      {promoProducts.length > 0 && (
-        <section className="border-b border-hpl-line bg-hpl-50">
-          <div className="shell py-14 sm:py-20">
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <p className="label mb-3">{t('promo.eyebrow')}</p>
-                <h2 className="display text-hpl-ink text-4xl sm:text-5xl">{t('promo.heading')}</h2>
-              </div>
-              <Link href="/products?promo=true" className="hidden sm:block text-[11px] font-semibold tracking-[0.18em] uppercase text-hpl-500 hover:text-hpl-ink transition-colors">
-                {t('promo.viewAll')}
-              </Link>
-            </div>
-            <ProductGrid products={promoProducts}/>
-          </div>
-        </section>
-      )}
 
       {/* Featured products */}
       {featured.length > 0 && (

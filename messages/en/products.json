@@ -5,7 +5,7 @@
   "metaTitle": "HPL Laminate Catalog — EDL & Lamitak | 1,748 Products",
   "metaDescription": "Complete catalog of EDL and Lamitak HPL laminate. 1,748 wood grain, solid color, stone, and pattern designs. Filter by brand, collection, and size. Prices include VAT.",
   "metaDescriptionShort": "Complete EDL and Lamitak HPL catalog. 1,748 designs, filter by brand, collection, and size.",
-  "metaKeywords": ["HPL catalog", "HPL price list", "EDL HPL full range", "Lamitak HPL full range", "HPL designs", "solid color HPL", "wood grain HPL", "buy HPL online"],
+  "metaKeywords": ["HPL catalog", "HPL price list", "EDL HPL full range", "Lamitak HPL full range", "HPL designs", "solid color HPL", "wood grain HPL", "HPL online catalog"],
   "tabs": { "all": "All", "edl": "EDL HPL", "lamitak": "Lamitak HPL" },
   "filterLabel": "Filter",
   "clearFilters": "Clear Filters",
@@ -27,8 +27,5 @@
   "resultsFound": "products found",
   "showing": "Showing {from}–{to}",
   "emptyState": "No products found.",
-  "loadingFallback": "Loading products…",
-  "promoBadge": "5% Off",
-  "newBadge": "New",
-  "addToCartAria": "Add {name} to cart"
+  "loadingFallback": "Loading products…"
 }

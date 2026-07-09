@@ -11,18 +11,10 @@ const NAMESPACE_FILES: Record<string, string> = {
   Home: 'home',
   Products: 'products',
   ProductDetail: 'productDetail',
-  Cart: 'cart',
-  Checkout: 'checkout',
-  OrderConfirmation: 'orderConfirmation',
-  OrderSuccess: 'orderSuccess',
   About: 'about',
   Contact: 'contact',
-  ShippingPage: 'shipping',
-  PanduanBelanja: 'panduanBelanja',
   PrivacyPolicy: 'privacyPolicy',
   NotFound: 'notFound',
-  Discount: 'discount',
-  ShippingZones: 'shippingZones',
   ChatWidget: 'chatWidget',
 };
 

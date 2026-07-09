@@ -33,8 +33,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...localizedEntry('/products?brand=LAMITAK', { changeFrequency: 'weekly', priority: 0.8 }),
     ...localizedEntry('/about', { changeFrequency: 'monthly', priority: 0.5 }),
     ...localizedEntry('/contact', { changeFrequency: 'monthly', priority: 0.5 }),
-    ...localizedEntry('/shipping', { changeFrequency: 'monthly', priority: 0.5 }),
-    ...localizedEntry('/panduan-belanja', { changeFrequency: 'monthly', priority: 0.6 }),
     ...localizedEntry('/kebijakan-privasi', { changeFrequency: 'yearly', priority: 0.3 }),
   ];
 

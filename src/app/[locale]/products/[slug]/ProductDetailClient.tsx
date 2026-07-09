@@ -1,19 +1,12 @@
-'use client';
-import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import type { Product } from '@/types/product';
 import { formatIDR } from '@/lib/utils';
 import { ProductImage } from '@/components/ProductImage';
-import { QuantityInput } from '@/components/QuantityInput';
-import { useCartStore } from '@/store/cartStore';
-import { DiscountTierTable } from '@/components/DiscountBadge';
 
 export function ProductDetailClient({ product }: { product: Product }) {
   const t = useTranslations('ProductDetail');
   const tCommon = useTranslations('Common');
-  const [qty, setQty] = useState(1);
-  const addItem = useCartStore((s) => s.addItem);
 
   const specs = [
     [t('specs.code'), product.code],
@@ -64,49 +57,21 @@ export function ProductDetailClient({ product }: { product: Product }) {
             </h1>
 
             <div className="border-t border-b border-hpl-line py-5 mb-7">
-              {product.isPromo && typeof product.price === 'number' ? (
-                <div className="flex items-baseline gap-3">
-                  <span className="font-display text-3xl font-light text-hpl-accent">{formatIDR(Math.round(product.price * 0.95))}</span>
-                  <span className="text-[15px] line-through text-hpl-400">{formatIDR(product.price)}</span>
-                  <span className="text-[11px] font-bold tracking-[0.1em] uppercase bg-hpl-accent text-white px-2 py-0.5">{t('promoBadge')}</span>
-                </div>
-              ) : (
-                <span className="font-display text-3xl font-light text-hpl-ink">{formatIDR(product.price) ?? tCommon('priceTBD')}</span>
-              )}
+              <span className="font-display text-3xl font-light text-hpl-ink">{formatIDR(product.price) ?? tCommon('priceTBD')}</span>
               <p className="mt-2 text-[11px] tracking-[0.14em] uppercase text-hpl-400">
                 {t('priceIncludesVat')}
               </p>
             </div>
 
-            {/* Qty + add to cart */}
+            {/* Ask via WhatsApp */}
             <div className="flex flex-col sm:flex-row items-start gap-4 mb-8">
-              <div>
-                <p className="label text-hpl-600 mb-2">{t('qtyLabel')}</p>
-                <QuantityInput value={qty} onChange={setQty}/>
-              </div>
               <div className="flex flex-col gap-2 flex-1 w-full sm:w-auto">
-                <p className="label text-hpl-600 mb-2 hidden sm:block opacity-0">Action</p>
-                <button
-                  type="button"
-                  onClick={() => addItem(product, qty)}
-                  className="btn-ink w-full sm:w-auto"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M16 10a4 4 0 01-8 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  {t('addToCart')}
-                </button>
-                <Link href="/checkout" className="btn-ghost w-full sm:w-auto justify-center">
-                  {t('buyNow')}
-                </Link>
                 <a
                   href={`https://wa.me/62811945224?text=${encodeURIComponent(`Halo TokoHPL, saya ingin bertanya tentang produk ${product.brand} ${product.code} — ${product.name}`)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="btn-ghost w-full sm:w-auto justify-center flex items-center gap-2">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="text-green-600 shrink-0">
+                  className="btn-ink w-full sm:w-auto justify-center flex items-center gap-2">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="shrink-0">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="currentColor"/>
                     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.528 5.847L.057 23.882l6.187-1.448A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.373l-.36-.213-3.667.858.925-3.585-.234-.369A9.818 9.818 0 1112 21.818z" fill="currentColor"/>
                   </svg>
@@ -124,11 +89,6 @@ export function ProductDetailClient({ product }: { product: Product }) {
               <p className="text-[12px] leading-6 text-hpl-600">
                 {t('shippingNote')}
               </p>
-            </div>
-
-            {/* Discount tiers */}
-            <div className="mb-8">
-              <DiscountTierTable />
             </div>
 
             {/* Specs */}

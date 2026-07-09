@@ -1,49 +1,42 @@
 {
   "metaTitle": "Privacy Policy — TokoHPL",
-  "metaDescription": "TokoHPL's privacy policy and customer data protection practices.",
+  "metaDescription": "TokoHPL's privacy policy covering site usage and WhatsApp communication.",
   "eyebrow": "Legal",
   "heading": "Privacy Policy",
   "effectiveDate": "Effective January 1, 2025",
-  "intro": "TokoHPL (<strong>tokohpl.com</strong>), operated by CV. Varindo Forma Hutama, is committed to protecting the privacy and personal data of every customer. This Privacy Policy explains how we collect, use, and safeguard the information you provide to us.",
+  "intro": "TokoHPL (<strong>tokohpl.com</strong>), operated by CV. Varindo Forma Hutama, is committed to protecting the privacy of every visitor. TokoHPL is a product catalog with no account system, shopping cart, or checkout, so the site does not collect your personal data directly. This policy explains how information is handled, including when you contact us via WhatsApp.",
   "sections": {
     "collect": {
       "title": "1. Information We Collect",
-      "intro": "When you place an order on tokohpl.com, we collect the following information:",
-      "items": ["Full name", "Phone number / WhatsApp", "Email address", "Shipping address (province, city, full address, postal code)", "Any delivery notes you choose to provide"],
-      "outro": "We do not collect payment information such as your credit card or bank account number. Payments are made via direct bank transfer."
+      "body": "tokohpl.com has no forms, accounts, shopping cart, or checkout, so we do not collect personal data through the site. If you choose to contact us via the \"Ask via WhatsApp\" button, that conversation happens directly in your WhatsApp app — any information you share there is entirely outside this site's systems."
     },
     "use": {
-      "title": "2. How We Use Your Information",
-      "intro": "The information you provide is used solely to:",
-      "items": ["Process and confirm your order", "Arrange delivery of products to your specified address", "Contact you via WhatsApp or email regarding your order status", "Provide better customer service"],
-      "outro": "We do <strong>not</strong> use your data for third-party marketing purposes or sell your data to other parties."
+      "title": "2. How We Use Information",
+      "body": "Information you share through a WhatsApp conversation is used solely to respond to your questions and assist with your order. We do <strong>not</strong> use it for third-party marketing purposes or sell it to other parties."
     },
     "storage": {
       "title": "3. Data Storage",
-      "body": "Order data is stored locally on your device via browser storage (localStorage) and in our internal systems for transaction record-keeping. This data is not stored on third-party servers without your knowledge."
+      "body": "This site does not store your personal data on our servers. The only thing saved on your device is your language preference (Indonesian/English), via a cookie that contains no personal information."
     },
     "sharing": {
       "title": "4. Sharing Information with Third Parties",
-      "intro": "We only share the information necessary with:",
-      "items": ["Shipping logistics partners, solely to process delivery of your order", "Authorities, where required by applicable law in Indonesia"]
+      "body": "Since this site does not collect your personal data, we don't share it with any third party, except where required by applicable law in Indonesia."
     },
     "security": {
       "title": "5. Data Security",
-      "body": "We take reasonable measures to protect your personal information from unauthorized access, disclosure, or misuse. Communication via WhatsApp is protected by end-to-end encryption."
+      "body": "Conversations via WhatsApp are protected by WhatsApp's own end-to-end encryption. We do not keep copies of those conversations in our systems."
     },
     "rights": {
       "title": "6. Your Rights",
-      "intro": "You have the right to:",
-      "items": ["Request access to the personal data we hold about you", "Request correction of inaccurate data", "Request deletion of your personal data from our systems"],
-      "outro": "To make such a request, please contact us by email at <email>tokohpl.admin@gmail.com</email>."
+      "body": "Since we don't store your personal data in our systems, there's no site data to access, correct, or delete. If you have questions about a WhatsApp conversation with us, please reach out by email at <email>tokohpl.admin@gmail.com</email>."
     },
     "cookies": {
-      "title": "7. Cookies and Local Storage",
-      "body": "This website uses browser local storage (localStorage) to save your shopping cart data and preferences during your session. This data is stored on your device and can be cleared at any time through your browser settings."
+      "title": "7. Cookies",
+      "body": "This site uses a single functional cookie to remember your language preference (Indonesian/English). It isn't used for tracking or advertising, and can be cleared at any time through your browser settings."
     },
     "changes": {
       "title": "8. Changes to This Policy",
-      "body": "We may update this Privacy Policy from time to time. Significant changes will be reflected on this page with an updated effective date. Continued use of our services after such changes constitutes acceptance of the updated policy."
+      "body": "We may update this Privacy Policy from time to time. Significant changes will be reflected on this page with an updated effective date."
     },
     "contact": {
       "title": "9. Contact Us",

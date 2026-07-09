@@ -1,15 +1,11 @@
-'use client';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import type { Product } from '@/types/product';
 import { formatIDR } from '@/lib/utils';
 import { ProductImage } from './ProductImage';
-import { useCartStore } from '@/store/cartStore';
 
 export function ProductCard({ product }: { product: Product }) {
-  const t = useTranslations('Products');
   const tCommon = useTranslations('Common');
-  const addItem = useCartStore((s) => s.addItem);
 
   return (
     <article className="group bg-white border border-hpl-line transition-all duration-200 hover:border-hpl-400 hover:shadow-card-hover">
@@ -20,16 +16,6 @@ export function ProductCard({ product }: { product: Product }) {
             alt={product.name}
           />
           <div className="absolute inset-0 bg-hpl-ink/0 transition-colors duration-200 group-hover:bg-hpl-ink/[0.03]" />
-          {product.isPromo && (
-            <span className="absolute top-2 left-2 bg-hpl-accent text-white text-[9px] font-bold tracking-[0.12em] uppercase px-2 py-1">
-              {t('promoBadge')}
-            </span>
-          )}
-          {product.isNew && !product.isPromo && (
-            <span className="absolute top-2 left-2 bg-hpl-ink text-white text-[9px] font-bold tracking-[0.12em] uppercase px-2 py-1">
-              {t('newBadge')}
-            </span>
-          )}
         </div>
       </Link>
 
@@ -46,20 +32,9 @@ export function ProductCard({ product }: { product: Product }) {
         {product.brand && (
           <p className="mt-1 text-[10px] tracking-[0.1em] uppercase text-hpl-400">{product.brand}</p>
         )}
-        <div className="mt-3 pt-3 border-t border-hpl-line flex items-end justify-between gap-2">
-          <div>
-            <span className="text-[13px] font-semibold text-hpl-ink">{formatIDR(product.price) ?? tCommon('priceTBD')}</span>
-            <p className="mt-0.5 text-[10px] text-hpl-400">{tCommon('includesVat')}</p>
-          </div>
-          <button type="button" onClick={() => addItem(product, 1)}
-            className="shrink-0 flex items-center justify-center w-8 h-8 bg-hpl-ink text-white hover:bg-hpl-accent transition-colors"
-            aria-label={t('addToCartAria', { name: product.name })}>
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-              <path d="M1 1h2l1.5 7h6l1.5-5H4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-              <circle cx="6.5" cy="12" r="1" fill="currentColor"/>
-              <circle cx="10.5" cy="12" r="1" fill="currentColor"/>
-            </svg>
-          </button>
+        <div className="mt-3 pt-3 border-t border-hpl-line">
+          <span className="text-[13px] font-semibold text-hpl-ink">{formatIDR(product.price) ?? tCommon('priceTBD')}</span>
+          <p className="mt-0.5 text-[10px] text-hpl-400">{tCommon('includesVat')}</p>
         </div>
       </div>
     </article>

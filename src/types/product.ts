@@ -17,13 +17,6 @@ export type Product = {
   active: boolean;
   isNew?: boolean;
   isBestSeller?: boolean;
-  isPromo?: boolean;
   imageUrl?: string;
   description?: string;
-};
-
-
-export type CartItem = {
-  product: Product;
-  quantity: number;
 };

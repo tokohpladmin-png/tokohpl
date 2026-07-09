@@ -2,7 +2,6 @@
 import { useTranslations } from 'next-intl';
 import { Link, useRouter, usePathname } from '@/i18n/navigation';
 import { FormEvent, useState, useEffect } from 'react';
-import { useCartStore } from '@/store/cartStore';
 import { LocaleSwitcher } from './LocaleSwitcher';
 
 function HeaderSearch({ onSearch }: { onSearch?: () => void }) {
@@ -37,34 +36,6 @@ function HeaderSearch({ onSearch }: { onSearch?: () => void }) {
         </svg>
       </button>
     </form>
-  );
-}
-
-function CartIcon() {
-  const t = useTranslations('Nav');
-  const { totalItems, openDrawer } = useCartStore();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  const count = mounted ? totalItems() : 0;
-
-  return (
-    <button
-      type="button"
-      onClick={openDrawer}
-      aria-label={t('cartAria', { count })}
-      className="relative flex items-center justify-center w-10 h-10 hover:opacity-80 transition-opacity"
-    >
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-hpl-ink">
-        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M16 10a4 4 0 01-8 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-      {count > 0 && (
-        <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] flex items-center justify-center rounded-full bg-hpl-gold text-white text-[9px] font-bold px-1">
-          {count > 99 ? '99+' : count}
-        </span>
-      )}
-    </button>
   );
 }
 
@@ -193,7 +164,6 @@ export function Header() {
             {/* Right */}
             <div className="flex items-center gap-3 shrink-0">
               <LocaleSwitcher className="hidden sm:flex" />
-              <CartIcon />
 
               {/* Mobile hamburger */}
               <button type="button" aria-label={t('toggleMenuAria')} aria-expanded={isOpen}
