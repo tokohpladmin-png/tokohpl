@@ -1,8 +1,8 @@
 {
   "hero": {
-    "eyebrow": "Dealer Resmi HPL Indonesia",
-    "heading": "Kini Anda dapat dengan mudah mendapatkan HPL berkualitas",
-    "body": "Temukan ribuan pilihan HPL berkualitas dari EDL dan Lamitak. Pengiriman ke seluruh Indonesia dengan harga kompetitif dan layanan yang berpusat pada pelanggan.",
+    "eyebrow": "Dealer Resmi HPL Terpercaya di Indonesia",
+    "heading": "HPL Berkualitas, dari Dealer yang Anda Percaya",
+    "body": "Temukan ribuan pilihan HPL berkualitas dari EDL dan Lamitak. Didukung layanan terbaik, respons cepat, dan pengiriman andal ke seluruh Indonesia.",
     "ctaAll": "Lihat Semua Produk",
     "ctaEdl": "EDL HPL",
     "ctaLamitak": "Lamitak HPL",
@@ -12,7 +12,7 @@
     "searchAria": "Cari produk",
     "searchSubmitAria": "Cari",
     "productsAvailable": "produk tersedia",
-    "strip": ["Dealer Resmi EDL HPL", "Dealer Resmi Lamitak HPL", "Pengiriman ke Seluruh Indonesia", "Harga Kompetitif"]
+    "strip": ["Dealer Resmi EDL & Lamitak", "Layanan Terbaik", "Respons Cepat", "Pengiriman ke Seluruh Indonesia"]
   },
   "brands": {
     "edlName": "EDL HPL",
@@ -27,11 +27,11 @@
     "eyebrow": "Keunggulan Kami",
     "headingLine1": "Mengapa Belanja",
     "headingLine2": "di TokoHPL?",
-    "body": "Kami menyediakan produk HPL berkualitas tinggi dengan harga kompetitif, pengiriman cepat, dan pelayanan profesional.",
+    "body": "Kami menggabungkan produk resmi bersertifikat dengan layanan terbaik, respons cepat, dan pengiriman andal ke seluruh Indonesia.",
     "items": [
-      { "title": "Harga Transparan", "body": "Harga yang tercantum pada situs ini merupakan harga resmi tanpa biaya tersembunyi." },
-      { "title": "Pengiriman Terpercaya", "body": "Pengiriman ke seluruh Indonesia melalui mitra ekspedisi terpercaya dengan tarif kompetitif." },
-      { "title": "Produk Resmi", "body": "Dealer resmi EDL dan Lamitak dengan produk berkualitas yang dijamin keasliannya. Anda akan mendapatkan produk sesuai dengan yang Anda butuhkan." }
+      { "title": "Dealer Resmi", "body": "Kami adalah dealer resmi EDL dan Lamitak di Indonesia, menjamin keaslian produk sesuai standar pabrikan." },
+      { "title": "Layanan Terbaik", "body": "Tim kami merespons setiap pertanyaan dengan cepat, membantu Anda menemukan HPL yang tepat dengan dukungan yang profesional dan andal." },
+      { "title": "Pengiriman ke Seluruh Indonesia", "body": "Kami mengirim ke seluruh Indonesia melalui mitra logistik terpercaya, memastikan pesanan Anda tiba dengan aman di mana pun Anda berada." }
     ]
   },
   "testimonials": {
@@ -49,7 +49,7 @@
     "eyebrow": "Jelajahi Katalog",
     "headingLine1": "Ribuan Pilihan HPL",
     "headingLine2": "Siap Dikirim",
-    "body": "Temukan HPL yang sesuai kebutuhan Anda. Pengiriman ke seluruh Indonesia.",
+    "body": "Temukan HPL yang sesuai kebutuhan Anda — didukung layanan terbaik dan pengiriman andal ke seluruh Indonesia.",
     "button": "Jelajahi Katalog"
   }
 }

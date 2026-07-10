@@ -1,7 +1,7 @@
 {
-  "assistantName": "TokoHPL Assistant",
-  "assistantSubtitle": "Ask about products, pricing & ordering",
-  "greeting": "Hi! I'm the TokoHPL assistant. I can help you find the right HPL, compare products, or answer questions about ordering. How can I help?",
+  "assistantName": "TokoHPL AI Assistant",
+  "assistantSubtitle": "Fast answers on products & ordering",
+  "greeting": "Hi! I'm TokoHPL's AI assistant, here to give you fast answers on our catalog from EDL and Lamitak's authorized dealer. I can help you find the right design, compare products, or guide you on how to order. How can I help?",
   "suggested": [
     "Recommend wood-grain HPL for a kitchen",
     "What's new in the Lamitak collection?",

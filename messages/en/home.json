@@ -1,8 +1,8 @@
 {
   "hero": {
-    "eyebrow": "Indonesia's Trusted HPL Dealer",
-    "heading": "Premium HPL Laminate, Now Just a Few Clicks Away",
-    "body": "Explore thousands of quality HPL designs from EDL and Lamitak. Nationwide delivery at competitive prices, backed by service that puts you first.",
+    "eyebrow": "Indonesia's Authorized HPL Dealer",
+    "heading": "Premium HPL, From a Dealer You Can Trust",
+    "body": "Explore thousands of quality HPL designs from EDL and Lamitak, backed by excellent service, fast response, and reliable delivery nationwide.",
     "ctaAll": "Browse All Products",
     "ctaEdl": "EDL HPL",
     "ctaLamitak": "Lamitak HPL",
@@ -12,7 +12,7 @@
     "searchAria": "Search products",
     "searchSubmitAria": "Search",
     "productsAvailable": "products available",
-    "strip": ["Authorized EDL HPL Dealer", "Authorized Lamitak HPL Dealer", "Nationwide Delivery", "Competitive Pricing"]
+    "strip": ["Authorized EDL & Lamitak Dealer", "Excellent Service", "Fast Response", "Nationwide Delivery"]
   },
   "brands": {
     "edlName": "EDL HPL",
@@ -27,11 +27,11 @@
     "eyebrow": "Why Choose Us",
     "headingLine1": "Why Shop",
     "headingLine2": "at TokoHPL?",
-    "body": "We supply high-quality HPL laminate at competitive prices, with fast delivery and professional service.",
+    "body": "We combine authorized product sourcing with excellent service, fast response, and reliable nationwide delivery.",
     "items": [
-      { "title": "Transparent Pricing", "body": "The prices listed on this site are our official rates, with no hidden fees." },
-      { "title": "Reliable Delivery", "body": "Nationwide delivery across Indonesia through trusted logistics partners at competitive rates." },
-      { "title": "Authentic Products", "body": "As an authorized EDL and Lamitak dealer, we guarantee the authenticity and quality of every product you receive." }
+      { "title": "Authorized Dealer", "body": "We are the authorized EDL and Lamitak dealer in Indonesia, guaranteeing genuine products backed by manufacturer standards." },
+      { "title": "Excellent Service", "body": "Our team responds quickly to every inquiry, helping you find the right HPL for your project with professional, reliable support." },
+      { "title": "Nationwide Delivery", "body": "We deliver across Indonesia through trusted logistics partners, ensuring your order arrives safely wherever you are." }
     ]
   },
   "testimonials": {
@@ -49,7 +49,7 @@
     "eyebrow": "Get Started",
     "headingLine1": "Thousands of HPL Designs",
     "headingLine2": "Ready to Ship",
-    "body": "Find the perfect HPL for your project, delivered nationwide across Indonesia.",
+    "body": "Find the perfect HPL for your project — backed by excellent service and reliable delivery nationwide.",
     "button": "Browse the Catalog"
   }
 }

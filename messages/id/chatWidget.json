@@ -1,7 +1,7 @@
 {
-  "assistantName": "Asisten TokoHPL",
-  "assistantSubtitle": "Tanya soal produk, harga, & pemesanan",
-  "greeting": "Halo! Saya asisten TokoHPL. Saya bisa membantu Anda menemukan HPL yang tepat, membandingkan produk, atau menjawab pertanyaan tentang pemesanan. Ada yang bisa saya bantu?",
+  "assistantName": "Asisten AI TokoHPL",
+  "assistantSubtitle": "Jawaban cepat seputar produk & pemesanan",
+  "greeting": "Halo! Saya asisten AI TokoHPL, siap memberikan jawaban cepat seputar katalog HPL dari dealer resmi EDL dan Lamitak. Saya bisa membantu Anda menemukan motif yang tepat, membandingkan produk, atau memandu cara memesan. Ada yang bisa saya bantu?",
   "suggested": [
     "Rekomendasi HPL motif kayu untuk dapur",
     "Apa saja koleksi terbaru dari Lamitak?",
