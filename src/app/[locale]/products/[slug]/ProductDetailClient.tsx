@@ -80,17 +80,6 @@ export function ProductDetailClient({ product }: { product: Product }) {
               </div>
             </div>
 
-            {/* Shipping note */}
-            <div className="mb-8 border border-hpl-line bg-hpl-50 px-5 py-4 flex items-start gap-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-hpl-gold mt-0.5 shrink-0">
-                <path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3m-5 9a2 2 0 100 4 2 2 0 000-4zm0 0h5.5a2 2 0 002-2v-5a2 2 0 00-.586-1.414L16 6H8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="17" cy="17" r="2" stroke="currentColor" strokeWidth="1.5"/>
-              </svg>
-              <p className="text-[12px] leading-6 text-hpl-600">
-                {t('shippingNote')}
-              </p>
-            </div>
-
             {/* Specs */}
             {specs.length > 0 && (
               <div className="border border-hpl-line">

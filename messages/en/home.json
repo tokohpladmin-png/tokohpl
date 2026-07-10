@@ -12,7 +12,7 @@
     "searchAria": "Search products",
     "searchSubmitAria": "Search",
     "productsAvailable": "products available",
-    "strip": ["Official EDL HPL Dealer", "Official Lamitak HPL Dealer", "Nationwide Delivery", "Competitive Pricing"]
+    "strip": ["Authorized EDL HPL Dealer", "Authorized Lamitak HPL Dealer", "Nationwide Delivery", "Competitive Pricing"]
   },
   "brands": {
     "edlName": "EDL HPL",
@@ -31,7 +31,7 @@
     "items": [
       { "title": "Transparent Pricing", "body": "The prices listed on this site are our official rates, with no hidden fees." },
       { "title": "Reliable Delivery", "body": "Nationwide delivery across Indonesia through trusted logistics partners at competitive rates." },
-      { "title": "Authentic Products", "body": "As an official EDL and Lamitak dealer, we guarantee the authenticity and quality of every product you receive." }
+      { "title": "Authentic Products", "body": "As an authorized EDL and Lamitak dealer, we guarantee the authenticity and quality of every product you receive." }
     ]
   },
   "testimonials": {
